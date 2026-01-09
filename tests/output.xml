@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-07T17:30:05.925470" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Success" source="d:\02_VS_Code_Project\ManaoPlaywrightProject\Robot_Automate\tests\login_success.robot">
+<test id="s1-t1" name="Login Should Succeed" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-07T17:30:06.099517" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${BASE}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-07T17:30:06.099329" elapsed="1.585242"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-07T17:30:07.687898" elapsed="0.035330"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-07T17:30:07.724671" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-07T17:30:07.724161" elapsed="0.238663"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-07T17:30:07.963938" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-07T17:30:07.963627" elapsed="0.117602"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-07T17:30:08.081802" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-07T17:30:08.081536" elapsed="0.082537"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-07T17:30:08.170222" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
+<arg>${EXPECTED_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-07T17:30:08.165026" elapsed="0.005278"/>
+</kw>
+<arg>5 times</arg>
+<arg>1s</arg>
+<arg>Location Should Be</arg>
+<arg>${EXPECTED_URL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-01-07T17:30:08.164408" elapsed="0.005965"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-07T17:30:08.173127" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
+<arg>${EXPECTED_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-07T17:30:08.170590" elapsed="0.002589"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-07T17:30:08.173509" elapsed="2.092711"/>
+</kw>
+<doc>Login with standard_user/secret_sauce and verify the landing URL is https://www.saucedemo.com/inventory.html</doc>
+<status status="PASS" start="2026-01-07T17:30:06.098538" elapsed="4.167891"/>
+</test>
+<status status="PASS" start="2026-01-07T17:30:05.926514" elapsed="4.340484"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Success" id="s1" pass="1" fail="0" skip="0">Login Success</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
