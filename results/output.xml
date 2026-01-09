@@ -1,69 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-09T09:42:58.908646" rpa="false" schemaversion="5">
-<suite id="s1" name="Robot Automate Nueng" source="D:\02_VS_Code_Project\Robot_Automate_Nueng">
-<suite id="s1-s1" name="Tests" source="D:\02_VS_Code_Project\Robot_Automate_Nueng\tests">
-<suite id="s1-s1-s1" name="Product" source="D:\02_VS_Code_Project\Robot_Automate_Nueng\tests\product.robot">
-<test id="s1-s1-s1-t1" name="Add New Product" line="8">
-<kw name="Open Browser To Login Page">
-<msg time="2026-01-09T09:42:59.340376" level="FAIL">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</msg>
-<status status="FAIL" start="2026-01-09T09:42:59.338022" elapsed="0.006890">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-09T11:59:08.407700" rpa="false" schemaversion="5">
+<suite id="s1" name="Product" source="D:\02_VS_Code_Project\Robot_Automate_Nueng\tests\product.robot">
+<test id="s1-t1" name="1 Add Single Product to Cart" line="6">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:59:08.756450" level="FAIL">Variable '${url}' not found.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2026-01-09T11:59:08.755461" elapsed="0.003801">Variable '${url}' not found.</status>
 </kw>
-<kw name="Login As Admin">
-<status status="NOT RUN" start="2026-01-09T09:42:59.347833" elapsed="0.001938"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>${standard_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T13:19:04.066372" elapsed="0.000392"/>
 </kw>
-<kw name="Go To Product Management Page">
-<status status="NOT RUN" start="2026-01-09T09:42:59.351869" elapsed="0.002124"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T13:19:04.067174" elapsed="0.000213"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<arg>Add New Product</arg>
+<arg>id:login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.356345" elapsed="0.000263"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=product_name</arg>
-<arg>Test Product</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.357087" elapsed="0.000268"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=product_description</arg>
-<arg>This is a test product.</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.357823" elapsed="0.000242"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=product_price</arg>
-<arg>19.99</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.358501" elapsed="0.000232"/>
-</kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<arg>id=product_category</arg>
-<arg>electronics</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.359169" elapsed="0.000269"/>
+<status status="NOT RUN" start="2026-01-09T13:19:04.067769" elapsed="0.000186"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<arg>Save Product</arg>
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.359773" elapsed="0.000195"/>
+<status status="NOT RUN" start="2026-01-09T13:19:04.068324" elapsed="0.000189"/>
 </kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<arg>Product added successfully.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.360712" elapsed="0.000244"/>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-09T13:19:04.068863" elapsed="0.000182"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-backpack</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-09T13:19:04.069440" elapsed="0.000173"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2026-01-09T09:42:59.361385" elapsed="0.000231"/>
+<status status="NOT RUN" start="2026-01-09T13:19:04.069941" elapsed="0.000169"/>
 </kw>
-<status status="FAIL" start="2026-01-09T09:42:59.330032" elapsed="0.032128">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2026-01-09T11:59:08.742791" elapsed="4795.327841">Variable '${url}' not found.</status>
 </test>
-<status status="FAIL" start="2026-01-09T09:42:59.032355" elapsed="0.336319"/>
-</suite>
-<status status="FAIL" start="2026-01-09T09:42:59.015197" elapsed="0.358163"/>
-</suite>
-<status status="FAIL" start="2026-01-09T09:42:58.916116" elapsed="0.483216"/>
+<status status="FAIL" start="2026-01-09T11:59:08.414877" elapsed="4795.664505"/>
 </suite>
 <statistics>
 <total>
@@ -72,12 +57,10 @@
 <tag>
 </tag>
 <suite>
-<stat name="Robot Automate Nueng" id="s1" pass="0" fail="1" skip="0">Robot Automate Nueng</stat>
-<stat name="Tests" id="s1-s1" pass="0" fail="1" skip="0">Robot Automate Nueng.Tests</stat>
-<stat name="Product" id="s1-s1-s1" pass="0" fail="1" skip="0">Robot Automate Nueng.Tests.Product</stat>
+<stat name="Product" id="s1" pass="0" fail="1" skip="0">Product</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-01-09T09:42:59.317839" level="ERROR">Error in file 'D:\02_VS_Code_Project\Robot_Automate_Nueng\tests\product.robot' on line 3: Error in file 'D:\02_VS_Code_Project\Robot_Automate_Nueng\tests\login.robot' on line 20: Resource file with 'Test Cases' section is invalid.</msg>
+<msg time="2026-01-09T11:59:08.731184" level="ERROR">Error in file 'D:\02_VS_Code_Project\Robot_Automate_Nueng\tests\product.robot' on line 3: Error in file 'D:\02_VS_Code_Project\Robot_Automate_Nueng\tests\login.robot' on line 20: Resource file with 'Test Cases' section is invalid.</msg>
 </errors>
 </robot>
