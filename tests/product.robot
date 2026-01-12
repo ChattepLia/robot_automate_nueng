@@ -2,27 +2,24 @@
 Library    SeleniumLibrary
 Resource   ${CURDIR}/../resources/globle_variables.resource
 Resource   ${CURDIR}/../resources/browser.resource
+Resource   ${CURDIR}/../keywords/login_keywords.robot
+Resource   ${CURDIR}/../keywords/product_keywords.robot
 
 
 *** Test Cases ***
 1 Add Single Product to Cart
-    Open Chrome Without Password Dialog    ${url}     chrome
-    Input Text    id:user-name    ${standard_user}
-    Input Text    id:password     ${password}
-    Click Button    id:login-button
-    Click Button    id=add-to-cart-sauce-labs-backpack
+    Login With Valid Credentials
+    Add Backpack To Cart
+    Wait Until Cart Count Is    1
     Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1
+    Wait Until Element Is Visible    id=remove-sauce-labs-backpack    timeout=5s
     Page Should Contain Element    id=remove-sauce-labs-backpack
     Close Browser
 
 2 Add Multi Product to Cart
-    Open Chrome Without Password Dialog
-    Input Text    id:user-name    ${standard_user}
-    Input Text    id:password     ${password}
-    Click Button    id:login-button
+    Login With Valid Credentials
     #Add Backpack To Cart
-    Click Button    id=add-to-cart-sauce-labs-backpack
-    Wait Until Element Is Visible    id=remove-sauce-labs-backpack    timeout=5s
+    Add Backpack To Cart
     Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1
     Page Should Contain Element    id=remove-sauce-labs-backpack
     #Add Bike Light To Cart
@@ -85,3 +82,10 @@ Resource   ${CURDIR}/../resources/browser.resource
     ${first_item}=    Get Text    xpath=(//div[@class='inventory_item_name'])[1]
     Should Be Equal    ${first_item}    Sauce Labs Backpack
     Close Browser
+
+
+*** Keywords ***
+Wait Until Cart Count Is
+    [Arguments]    ${arg1}
+    # TODO: implement keyword "Wait Until Cart Count Is".
+    Fail    Not Implemented
