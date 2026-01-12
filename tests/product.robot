@@ -1,11 +1,12 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ${CURDIR}/../resources/variables.robot
-Resource   ${CURDIR}/../resources/browser.robot
+Resource   ${CURDIR}/../resources/globle_variables.resource
+Resource   ${CURDIR}/../resources/browser.resource
+
 
 *** Test Cases ***
 1 Add Single Product to Cart
-    Open Chrome Without Password Dialog    ${url}
+    Open Chrome Without Password Dialog    ${url}     chrome
     Input Text    id:user-name    ${standard_user}
     Input Text    id:password     ${password}
     Click Button    id:login-button
@@ -15,7 +16,7 @@ Resource   ${CURDIR}/../resources/browser.robot
     Close Browser
 
 2 Add Multi Product to Cart
-    Open Chrome Without Password Dialog    ${url}
+    Open Chrome Without Password Dialog
     Input Text    id:user-name    ${standard_user}
     Input Text    id:password     ${password}
     Click Button    id:login-button
@@ -47,7 +48,7 @@ Resource   ${CURDIR}/../resources/browser.robot
     Close Browser
 
 3 Remove Product from Cart
-    Open Chrome Without Password Dialog    ${url}
+    Open Chrome Without Password Dialog
     Input Text    id:user-name    ${standard_user}
     Input Text    id:password     ${password}
     Click Button    id:login-button

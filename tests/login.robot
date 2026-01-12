@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ${CURDIR}/../resources/variables.robot
-Resource   ${CURDIR}/../resources/browser.robot
+Resource   ${CURDIR}/../resources/globle_variables.resource
+Resource   ${CURDIR}/../resources/browser.resource
+
 
 *** Test Cases ***
 1 Login Standard User
@@ -9,6 +10,7 @@ Resource   ${CURDIR}/../resources/browser.robot
     Input Text    id:user-name    ${standard_user}
     Input Text    id:password     ${password}
     Click Button    id:login-button
+    Wait Until Location Is    ${inventory_url}    timeout=5s
     Location Should Be    ${inventory_url}
     Page Should Contain        ${inventory_page_title}
     Close Browser
@@ -18,6 +20,7 @@ Resource   ${CURDIR}/../resources/browser.robot
     Input Text    id:user-name    ${problem_user}
     Input Text    id:password     ${password}
     Click Button    id:login-button
+    Wait Until Location Is    ${inventory_url}    timeout=5s
     Location Should Be    ${inventory_url}
     Page Should Contain        ${inventory_page_title}
     Close Browser
@@ -27,6 +30,7 @@ Resource   ${CURDIR}/../resources/browser.robot
     Input Text    id:user-name    ${performance_glitch_user}
     Input Text    id:password     ${password}
     Click Button    id:login-button
+    Wait Until Location Is    ${inventory_url}    timeout=5s
     Location Should Be    ${inventory_url}
     Page Should Contain        ${inventory_page_title}
     Close Browser
