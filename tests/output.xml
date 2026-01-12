@@ -1,75 +1,888 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-07T17:30:05.925470" rpa="false" schemaversion="5">
-<suite id="s1" name="Login Success" source="d:\02_VS_Code_Project\ManaoPlaywrightProject\Robot_Automate\tests\login_success.robot">
-<test id="s1-t1" name="Login Should Succeed" line="11">
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-12T09:59:24.637357" rpa="false" schemaversion="5">
+<suite id="s1" name="Product" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\product.robot">
+<test id="s1-t1" name="1 Add Single Product to Cart" line="7">
+<kw name="Open Chrome Without Password Dialog" owner="browser">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.889221" level="INFO">${headless} = False</msg>
+<var>${headless}</var>
+<arg>${HEADLESS}</arg>
+<arg>${headless}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.888951" elapsed="0.000300"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.890024" level="INFO">${opts} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001897E6F78C0&gt;</msg>
+<var>${opts}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.889628" elapsed="0.000431"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.890168" elapsed="0.000234"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.890491" elapsed="0.000172"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-first-run</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.890738" elapsed="0.000163"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-default-browser-check</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.890975" elapsed="0.000156"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${headless}</arg>
+<arg>Call Method</arg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.891215" elapsed="0.000202"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.891770" level="INFO">${prefs} = {'credentials_enable_service': 'False', 'profile.password_manager_enabled': 'False', 'password_manager_enabled': 'False', 'safebrowsing.enabled': 'False'}</msg>
+<var>${prefs}</var>
+<arg>credentials_enable_service=False</arg>
+<arg>profile.password_manager_enabled=False</arg>
+<arg>password_manager_enabled=False</arg>
+<arg>safebrowsing.enabled=False</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.891503" elapsed="0.000290"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.891871" elapsed="0.000181"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.892274" level="INFO">${sw} = ['enable-automation']</msg>
+<var>${sw}</var>
+<arg>enable-automation</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.892127" elapsed="0.000167"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>excludeSwitches</arg>
+<arg>${sw}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.892362" elapsed="0.000172"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>useAutomationExtension</arg>
+<arg>False</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.892604" elapsed="0.000151"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.893071" elapsed="0.001063"/>
+</kw>
+<msg time="2026-01-12T09:59:24.894217" level="INFO">${user_data_dir} = C:\Users\Chatt\AppData\Local\Temp\tmp7w32fk64</msg>
+<var>${user_data_dir}</var>
+<arg>'${user_data_dir}' == 'None'</arg>
+<arg>Evaluate</arg>
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${user_data_dir}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.892831" elapsed="0.001408"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.894591" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</msg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--user-data-dir=${user_data_dir}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-01-12T09:59:24.894327" elapsed="0.000394">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-07T17:30:06.099517" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
-<arg>${BASE}</arg>
-<arg>chrome</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${opts}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-07T17:30:06.099329" elapsed="1.585242"/>
+<status status="NOT RUN" start="2026-01-12T09:59:24.894829" elapsed="0.000021"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-01-07T17:30:07.687898" elapsed="0.035330"/>
+<arg>${url}</arg>
+<status status="FAIL" start="2026-01-12T09:59:24.888292" elapsed="0.006643">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-07T17:30:07.724671" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
 <arg>id:user-name</arg>
-<arg>${USERNAME}</arg>
+<arg>${standard_user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-07T17:30:07.724161" elapsed="0.238663"/>
+<status status="NOT RUN" start="2026-01-12T09:59:24.895074" elapsed="0.000022"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-07T17:30:07.963938" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
 <arg>id:password</arg>
-<arg>${PASSWORD}</arg>
+<arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-07T17:30:07.963627" elapsed="0.117602"/>
+<status status="NOT RUN" start="2026-01-12T09:59:24.895211" elapsed="0.000020"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-07T17:30:08.081802" level="INFO">Clicking button 'id:login-button'.</msg>
 <arg>id:login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-07T17:30:08.081536" elapsed="0.082537"/>
+<status status="NOT RUN" start="2026-01-12T09:59:24.895524" elapsed="0.000033"/>
 </kw>
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-07T17:30:08.170222" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
-<arg>${EXPECTED_URL}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2026-01-07T17:30:08.165026" elapsed="0.005278"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.895702" elapsed="0.000023"/>
 </kw>
-<arg>5 times</arg>
-<arg>1s</arg>
-<arg>Location Should Be</arg>
-<arg>${EXPECTED_URL}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-01-07T17:30:08.164408" elapsed="0.005965"/>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.895842" elapsed="0.000028"/>
 </kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-07T17:30:08.173127" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
-<arg>${EXPECTED_URL}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2026-01-07T17:30:08.170590" elapsed="0.002589"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-backpack</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.895980" elapsed="0.000042"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-07T17:30:08.173509" elapsed="2.092711"/>
+<status status="NOT RUN" start="2026-01-12T09:59:24.896144" elapsed="0.000086"/>
 </kw>
-<doc>Login with standard_user/secret_sauce and verify the landing URL is https://www.saucedemo.com/inventory.html</doc>
-<status status="PASS" start="2026-01-07T17:30:06.098538" elapsed="4.167891"/>
+<status status="FAIL" start="2026-01-12T09:59:24.887661" elapsed="0.008720">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
 </test>
-<status status="PASS" start="2026-01-07T17:30:05.926514" elapsed="4.340484"/>
+<test id="s1-t2" name="2 Add Multi Product to Cart" line="17">
+<kw name="Open Chrome Without Password Dialog" owner="browser">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.897485" level="INFO">${headless} = False</msg>
+<var>${headless}</var>
+<arg>${HEADLESS}</arg>
+<arg>${headless}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.897243" elapsed="0.000266"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.897848" level="INFO">${opts} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001897E77E350&gt;</msg>
+<var>${opts}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.897591" elapsed="0.000280"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.897946" elapsed="0.000168"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.898193" elapsed="0.000156"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-first-run</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.898418" elapsed="0.000149"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-default-browser-check</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.898634" elapsed="0.000152"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${headless}</arg>
+<arg>Call Method</arg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.898860" elapsed="0.000181"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.899325" level="INFO">${prefs} = {'credentials_enable_service': 'False', 'profile.password_manager_enabled': 'False', 'password_manager_enabled': 'False', 'safebrowsing.enabled': 'False'}</msg>
+<var>${prefs}</var>
+<arg>credentials_enable_service=False</arg>
+<arg>profile.password_manager_enabled=False</arg>
+<arg>password_manager_enabled=False</arg>
+<arg>safebrowsing.enabled=False</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.899120" elapsed="0.000226"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.899419" elapsed="0.000173"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.899811" level="INFO">${sw} = ['enable-automation']</msg>
+<var>${sw}</var>
+<arg>enable-automation</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.899663" elapsed="0.000168"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>excludeSwitches</arg>
+<arg>${sw}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.899896" elapsed="0.000167"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>useAutomationExtension</arg>
+<arg>False</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.900131" elapsed="0.000149"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.900584" elapsed="0.000449"/>
+</kw>
+<msg time="2026-01-12T09:59:24.901115" level="INFO">${user_data_dir} = C:\Users\Chatt\AppData\Local\Temp\tmpqwt4i4q7</msg>
+<var>${user_data_dir}</var>
+<arg>'${user_data_dir}' == 'None'</arg>
+<arg>Evaluate</arg>
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${user_data_dir}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.900355" elapsed="0.000786"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.901462" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</msg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--user-data-dir=${user_data_dir}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-01-12T09:59:24.901223" elapsed="0.000315">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${opts}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.901642" elapsed="0.000020"/>
+</kw>
+<arg>${url}</arg>
+<status status="FAIL" start="2026-01-12T09:59:24.897013" elapsed="0.004730">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>${standard_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.901916" elapsed="0.000025"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.902080" elapsed="0.000024"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.902222" elapsed="0.000021"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.902701" elapsed="0.000022"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-backpack</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.902840" elapsed="0.000020"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.902966" elapsed="0.000019"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-backpack</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.903154" elapsed="0.000022"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-bike-light</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.903279" elapsed="0.000021"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-bike-light</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.903444" elapsed="0.000019"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>2</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.903560" elapsed="0.000019"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-bike-light</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.903678" elapsed="0.000018"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-bolt-t-shirt</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.903791" elapsed="0.000018"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-bolt-t-shirt</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.903904" elapsed="0.000018"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>3</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.904017" elapsed="0.000018"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-bolt-t-shirt</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.904131" elapsed="0.000018"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-fleece-jacket</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.904240" elapsed="0.000018"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-fleece-jacket</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.904442" elapsed="0.000027"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>4</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.904621" elapsed="0.000028"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-fleece-jacket</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.904783" elapsed="0.000025"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-onesie</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.904928" elapsed="0.000024"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-onesie</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.905070" elapsed="0.000023"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>5</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.905209" elapsed="0.000023"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-onesie</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.905347" elapsed="0.000022"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.905500" elapsed="0.000022"/>
+</kw>
+<status status="FAIL" start="2026-01-12T09:59:24.896712" elapsed="0.009001">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</test>
+<test id="s1-t3" name="3 Remove Product from Cart" line="49">
+<kw name="Open Chrome Without Password Dialog" owner="browser">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.906801" level="INFO">${headless} = False</msg>
+<var>${headless}</var>
+<arg>${HEADLESS}</arg>
+<arg>${headless}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.906597" elapsed="0.000225"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.907249" level="INFO">${opts} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001897E77E850&gt;</msg>
+<var>${opts}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.906898" elapsed="0.000375"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.907348" elapsed="0.000173"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.907594" elapsed="0.000159"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-first-run</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.907822" elapsed="0.000205"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-default-browser-check</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.908100" elapsed="0.000242"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${headless}</arg>
+<arg>Call Method</arg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.908423" elapsed="0.000234"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.909059" level="INFO">${prefs} = {'credentials_enable_service': 'False', 'profile.password_manager_enabled': 'False', 'password_manager_enabled': 'False', 'safebrowsing.enabled': 'False'}</msg>
+<var>${prefs}</var>
+<arg>credentials_enable_service=False</arg>
+<arg>profile.password_manager_enabled=False</arg>
+<arg>password_manager_enabled=False</arg>
+<arg>safebrowsing.enabled=False</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.908849" elapsed="0.000231"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.909239" elapsed="0.000333"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.909804" level="INFO">${sw} = ['enable-automation']</msg>
+<var>${sw}</var>
+<arg>enable-automation</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.909652" elapsed="0.000172"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>excludeSwitches</arg>
+<arg>${sw}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.909934" elapsed="0.000812"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>useAutomationExtension</arg>
+<arg>False</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.910826" elapsed="0.000232"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.911416" elapsed="0.000747"/>
+</kw>
+<msg time="2026-01-12T09:59:24.912268" level="INFO">${user_data_dir} = C:\Users\Chatt\AppData\Local\Temp\tmpfbvl2ul9</msg>
+<var>${user_data_dir}</var>
+<arg>'${user_data_dir}' == 'None'</arg>
+<arg>Evaluate</arg>
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${user_data_dir}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.911140" elapsed="0.001154"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.912654" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</msg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--user-data-dir=${user_data_dir}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-01-12T09:59:24.912399" elapsed="0.000328">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${opts}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.912827" elapsed="0.000022"/>
+</kw>
+<arg>${url}</arg>
+<status status="FAIL" start="2026-01-12T09:59:24.906376" elapsed="0.006547">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>${standard_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.913179" elapsed="0.000025"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.913326" elapsed="0.000020"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.913450" elapsed="0.000020"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.913567" elapsed="0.000018"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-bike-light</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.913686" elapsed="0.000019"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-bolt-t-shirt</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.913799" elapsed="0.000018"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-fleece-jacket</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.913909" elapsed="0.000018"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-onesie</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914020" elapsed="0.000017"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914171" elapsed="0.000018"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>4</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914284" elapsed="0.000018"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914405" elapsed="0.000018"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-bike-light</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914517" elapsed="0.000019"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>3</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914630" elapsed="0.000025"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-bike-light</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914769" elapsed="0.000018"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-bolt-t-shirt</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914886" elapsed="0.000018"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>2</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.914999" elapsed="0.000018"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-bolt-t-shirt</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.915170" elapsed="0.000020"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-fleece-jacket</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.915334" elapsed="0.000029"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.915505" elapsed="0.000024"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-fleece-jacket</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.915741" elapsed="0.000023"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=remove-sauce-labs-onesie</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.915870" elapsed="0.000020"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.915991" elapsed="0.000019"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=add-to-cart-sauce-labs-onesie</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.916106" elapsed="0.000018"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.916216" elapsed="0.000021"/>
+</kw>
+<status status="FAIL" start="2026-01-12T09:59:24.906052" elapsed="0.010352">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</test>
+<test id="s1-t4" name="4 Sorting by A to Z" line="78">
+<kw name="Open Chrome Without Password Dialog" owner="browser">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.917549" level="INFO">${headless} = False</msg>
+<var>${headless}</var>
+<arg>${HEADLESS}</arg>
+<arg>${headless}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.917322" elapsed="0.000248"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.917873" level="INFO">${opts} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001897E70B230&gt;</msg>
+<var>${opts}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.917648" elapsed="0.000247"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.917970" elapsed="0.000161"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.918207" elapsed="0.000153"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-first-run</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.918429" elapsed="0.000150"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--no-default-browser-check</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.918695" elapsed="0.000241"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${headless}</arg>
+<arg>Call Method</arg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.919041" elapsed="0.000238"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.919602" level="INFO">${prefs} = {'credentials_enable_service': 'False', 'profile.password_manager_enabled': 'False', 'password_manager_enabled': 'False', 'safebrowsing.enabled': 'False'}</msg>
+<var>${prefs}</var>
+<arg>credentials_enable_service=False</arg>
+<arg>profile.password_manager_enabled=False</arg>
+<arg>password_manager_enabled=False</arg>
+<arg>safebrowsing.enabled=False</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.919385" elapsed="0.000240"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.919700" elapsed="0.000177"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.920092" level="INFO">${sw} = ['enable-automation']</msg>
+<var>${sw}</var>
+<arg>enable-automation</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.919950" elapsed="0.000161"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>excludeSwitches</arg>
+<arg>${sw}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.920177" elapsed="0.000172"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${opts}</arg>
+<arg>add_experimental_option</arg>
+<arg>useAutomationExtension</arg>
+<arg>False</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.920419" elapsed="0.000153"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.920880" elapsed="0.000424"/>
+</kw>
+<msg time="2026-01-12T09:59:24.921386" level="INFO">${user_data_dir} = C:\Users\Chatt\AppData\Local\Temp\tmptx3bpzh9</msg>
+<var>${user_data_dir}</var>
+<arg>'${user_data_dir}' == 'None'</arg>
+<arg>Evaluate</arg>
+<arg>tempfile.mkdtemp()</arg>
+<arg>tempfile</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${user_data_dir}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-12T09:59:24.920651" elapsed="0.000755"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-12T09:59:24.921717" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</msg>
+<arg>${opts}</arg>
+<arg>add_argument</arg>
+<arg>--user-data-dir=${user_data_dir}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-01-12T09:59:24.921491" elapsed="0.000297">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${opts}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.921887" elapsed="0.000020"/>
+</kw>
+<arg>${url}</arg>
+<status status="FAIL" start="2026-01-12T09:59:24.917056" elapsed="0.004918">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>${standard_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.922101" elapsed="0.000020"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.922230" elapsed="0.000020"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.922410" elapsed="0.000021"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>css=.product_sort_container</arg>
+<arg>az</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.922543" elapsed="0.000019"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${first_item}</var>
+<arg>xpath=(//div[@class='inventory_item_name'])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.922664" elapsed="0.000019"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${first_item}</arg>
+<arg>Sauce Labs Backpack</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.922786" elapsed="0.000019"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-12T09:59:24.922904" elapsed="0.000018"/>
+</kw>
+<status status="FAIL" start="2026-01-12T09:59:24.916712" elapsed="0.006329">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--user-data-dir'</status>
+</test>
+<status status="FAIL" start="2026-01-12T09:59:24.638495" elapsed="0.285043"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Login Success" id="s1" pass="1" fail="0" skip="0">Login Success</stat>
+<stat name="Product" id="s1" pass="0" fail="4" skip="0">Product</stat>
 </suite>
 </statistics>
 <errors>
