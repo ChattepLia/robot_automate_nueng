@@ -4,5 +4,5 @@ Resource   ${CURDIR}/../resources/globle_variables.resource
 
 *** Keywords ***
 Open Chrome Without Password Dialog
-    Open Browser    ${URL}    ${BROWSER}
+   Open Browser    ${URL}    ${BROWSER}
     ...    options=add_experimental_option("detach",True);add_experimental_option("prefs", {"profile.password_manager_leak_detection": False})

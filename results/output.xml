@@ -1,154 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-12T17:43:25.151696" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-13T20:26:29.689803" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Automate Nueng" source="D:\02_VS_Code_Project\robot_automate_nueng">
 <suite id="s1-s1" name="Tests" source="D:\02_VS_Code_Project\robot_automate_nueng\tests">
 <suite id="s1-s1-s1" name="Product" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\product.robot">
-<test id="s1-s1-s1-t1" name="1 Add Single Product to Cart" line="10">
+<test id="s1-s1-s1-t1" name="4 Sorting by A to Z" line="76">
 <kw name="Login With Valid Credentials" owner="login_keywords">
 <kw name="Open Chrome Without Password Dialog" owner="browser">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-01-12T17:43:25.507864" level="INFO">${opts} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000022DC1EF86E0&gt;</msg>
-<var>${opts}</var>
-<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
-<arg>sys,selenium.webdriver</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.507383" elapsed="0.000709"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-01-12T17:43:25.508706" level="INFO">${prefs} = {'credentials_enable_service': 'False', 'profile.password_manager_enabled': 'False', 'password_manager_enabled': 'False', 'safebrowsing.enabled': 'False'}</msg>
-<var>${prefs}</var>
-<arg>credentials_enable_service=False</arg>
-<arg>profile.password_manager_enabled=False</arg>
-<arg>password_manager_enabled=False</arg>
-<arg>safebrowsing.enabled=False</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.508273" elapsed="0.000538"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${opts}</arg>
-<arg>add_experimental_option</arg>
-<arg>prefs</arg>
-<arg>${prefs}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.508956" elapsed="0.000360"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${opts}</arg>
-<arg>add_argument</arg>
-<arg>--disable-notifications</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.509436" elapsed="0.000282"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${opts}</arg>
-<arg>add_argument</arg>
-<arg>--disable-popup-blocking</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.509834" elapsed="0.000247"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Evaluate" owner="BuiltIn">
-<arg>tempfile.mkdtemp()</arg>
-<arg>tempfile</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.510579" elapsed="0.001218"/>
-</kw>
-<msg time="2026-01-12T17:43:25.512011" level="INFO">${user_data_dir} = C:\Users\Chatt\AppData\Local\Temp\tmpy5z8bqt0</msg>
-<var>${user_data_dir}</var>
-<arg>'${user_data_dir}' == 'None'</arg>
-<arg>Evaluate</arg>
-<arg>tempfile.mkdtemp()</arg>
-<arg>tempfile</arg>
-<arg>ELSE</arg>
-<arg>Set Variable</arg>
-<arg>${user_data_dir}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.510199" elapsed="0.001975"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2026-01-12T17:43:25.512912" level="INFO">${user_arg} = --user-data-dir=C:\Users\Chatt\AppData\Local\Temp\tmpy5z8bqt0</msg>
-<var>${user_arg}</var>
-<arg>SEPARATOR=</arg>
-<arg>--user-data-dir=</arg>
-<arg>${user_data_dir}</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.512390" elapsed="0.000648"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${opts}</arg>
-<arg>add_argument</arg>
-<arg>${user_arg}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.513241" elapsed="0.000346"/>
-</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-12T17:43:25.514006" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<arg>options=${opts}</arg>
+<msg time="2026-01-13T20:26:29.893956" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach",True);add_experimental_option("prefs", {"profile.password_manager_leak_detection": False})</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-12T17:43:25.513729" elapsed="1.723053"/>
+<status status="PASS" start="2026-01-13T20:26:29.893542" elapsed="1.377064"/>
 </kw>
-<arg>${url}</arg>
-<status status="PASS" start="2026-01-12T17:43:25.506723" elapsed="1.730289"/>
+<status status="PASS" start="2026-01-13T20:26:29.892984" elapsed="1.377842"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-12T17:43:27.237821" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
-<msg time="2026-01-12T17:43:27.701698" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-01-12T17:43:27.702221" level="FAIL">Element with locator 'id=user-name' not found.</msg>
-<arg>id=user-name</arg>
+<msg time="2026-01-13T20:26:31.271442" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
 <arg>${standard_user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="FAIL" start="2026-01-12T17:43:27.237208" elapsed="0.532875">Element with locator 'id=user-name' not found.</status>
+<status status="PASS" start="2026-01-13T20:26:31.270994" elapsed="0.066599"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=password</arg>
+<msg time="2026-01-13T20:26:31.338287" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-12T17:43:27.770308" elapsed="0.000118"/>
+<status status="PASS" start="2026-01-13T20:26:31.337871" elapsed="0.049004"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<arg>id=login-button</arg>
+<msg time="2026-01-13T20:26:31.387338" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-12T17:43:27.770538" elapsed="0.000078"/>
+<status status="PASS" start="2026-01-13T20:26:31.387082" elapsed="0.063951"/>
 </kw>
-<status status="FAIL" start="2026-01-12T17:43:25.506265" elapsed="2.266870">Element with locator 'id=user-name' not found.</status>
+<status status="PASS" start="2026-01-13T20:26:29.892618" elapsed="1.558602"/>
 </kw>
-<kw name="Add Backpack To Cart" owner="product_keywords">
-<status status="NOT RUN" start="2026-01-12T17:43:27.773431" elapsed="0.000108"/>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-01-13T20:26:31.451899" level="INFO">Selecting options from selection list 'css=.product_sort_container' by value az.</msg>
+<arg>css=.product_sort_container</arg>
+<arg>az</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-01-13T20:26:31.451527" elapsed="0.032487"/>
 </kw>
-<kw name="Wait Until Cart Count Is">
-<arg>1</arg>
-<status status="NOT RUN" start="2026-01-12T17:43:27.773783" elapsed="0.000125"/>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2026-01-13T20:26:31.490997" level="INFO">${elements} = []</msg>
+<var>${elements}</var>
+<arg>xpath=//div[@class='inventory_item_name']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2026-01-13T20:26:31.484343" elapsed="0.006791"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<arg>css=#shopping_cart_container .shopping_cart_badge</arg>
-<arg>1</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2026-01-12T17:43:27.774098" elapsed="0.000093"/>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-13T20:26:31.491922" level="INFO">${names} = []</msg>
+<var>${names}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-13T20:26:31.491452" elapsed="0.000584"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=remove-sauce-labs-backpack</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2026-01-12T17:43:27.774357" elapsed="0.000086"/>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${name}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-13T20:26:31.492767" elapsed="0.000109"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>id=remove-sauce-labs-backpack</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2026-01-12T17:43:27.774598" elapsed="0.000082"/>
+<kw name="Append To List" owner="Collections">
+<arg>${names}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-01-13T20:26:31.493017" elapsed="0.000084"/>
+</kw>
+<var name="${el}"/>
+<status status="NOT RUN" start="2026-01-13T20:26:31.492594" elapsed="0.000574"/>
+</iter>
+<var>${el}</var>
+<value>@{elements}</value>
+<status status="NOT RUN" start="2026-01-13T20:26:31.492335" elapsed="0.000888"/>
+</for>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-13T20:26:31.493820" level="INFO">${expected} = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie']</msg>
+<var>${expected}</var>
+<arg>Sauce Labs Backpack</arg>
+<arg>Sauce Labs Bike Light</arg>
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<arg>Sauce Labs Fleece Jacket</arg>
+<arg>Sauce Labs Onesie</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-13T20:26:31.493405" elapsed="0.000547"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<msg time="2026-01-13T20:26:31.494836" level="FAIL">Lengths are different: 0 != 5</msg>
+<arg>${names}</arg>
+<arg>${expected}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="FAIL" start="2026-01-13T20:26:31.494242" elapsed="0.004147">Lengths are different: 0 != 5</status>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2026-01-12T17:43:27.774823" elapsed="0.000080"/>
+<status status="NOT RUN" start="2026-01-13T20:26:31.498730" elapsed="0.000135"/>
 </kw>
-<status status="FAIL" start="2026-01-12T17:43:25.503786" elapsed="2.271388">Element with locator 'id=user-name' not found.</status>
+<status status="FAIL" start="2026-01-13T20:26:29.890673" elapsed="1.608446">Lengths are different: 0 != 5</status>
 </test>
-<status status="FAIL" start="2026-01-12T17:43:25.251814" elapsed="2.536375"/>
+<status status="FAIL" start="2026-01-13T20:26:29.726429" elapsed="1.776448"/>
 </suite>
-<status status="FAIL" start="2026-01-12T17:43:25.242643" elapsed="2.548890"/>
+<status status="FAIL" start="2026-01-13T20:26:29.724101" elapsed="1.781038"/>
 </suite>
-<status status="FAIL" start="2026-01-12T17:43:25.156897" elapsed="2.638500"/>
+<status status="FAIL" start="2026-01-13T20:26:29.693378" elapsed="1.814272"/>
 </suite>
 <statistics>
 <total>
