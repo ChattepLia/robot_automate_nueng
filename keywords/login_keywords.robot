@@ -12,3 +12,4 @@ Login With Valid Credentials
     Input Text    id:user-name    ${standard_user}
     Input Text    id:password    ${password}
     Click Button    id:login-button
+    Wait Until Location Is    ${inventory_url}    timeout=5s

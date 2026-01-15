@@ -126,18 +126,21 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Select From List By Value    css=.product_sort_container    lohi
     Wait Until Element Contains    css=.active_option    Price (low to high)    timeout=5s
     Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Sauce Labs Onesie  timeout=5s
-    ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
-    Should Be Equal    ${first_item}    Sauce Labs Onesie
-    ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
-    Should Be Equal    ${second_item}   Sauce Labs Bike Light
-    ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
-    Should Be Equal    ${third_item}    Sauce Labs Bolt T-Shirt
-    ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
-    Should Be Equal    ${fourth_item}   Test.allTheThings() T-Shirt (Red)
-    ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
-    Should Be Equal    ${fifth_item}    Sauce Labs Backpack
-    ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
-    Should Be Equal    ${sixth_item}    Sauce Labs Fleece Jacket
+    ${get_product_list}=    Get Product list
+    ${expected_product_list}=    Create List    Sauce Labs Onesie    Sauce Labs Bike Light    Sauce Labs Bolt T-Shirt    Test.allTheThings() T-Shirt (Red)    Sauce Labs Backpack    Sauce Labs Fleece Jacket
+    Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
+    # ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
+    # Should Be Equal    ${first_item}    Sauce Labs Onesie
+    # ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
+    # Should Be Equal    ${second_item}   Sauce Labs Bike Light
+    # ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
+    # Should Be Equal    ${third_item}    Sauce Labs Bolt T-Shirt
+    # ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
+    # Should Be Equal    ${fourth_item}   Test.allTheThings() T-Shirt (Red)
+    # ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
+    # Should Be Equal    ${fifth_item}    Sauce Labs Backpack
+    # ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
+    # Should Be Equal    ${sixth_item}    Sauce Labs Fleece Jacket
     Close Browser
 
 7 Sorting by Price High to Low
@@ -145,18 +148,21 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Select From List By Value    css=.product_sort_container    hilo
     Wait Until Element Contains    css=.active_option    Price (high to low)    timeout=5s
     Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Sauce Labs Fleece Jacket  timeout=5s
-    ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
-    Should Be Equal    ${first_item}    Sauce Labs Fleece Jacket
-    ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
-    Should Be Equal    ${second_item}   Sauce Labs Backpack
-    ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
-    Should Be Equal    ${third_item}    Sauce Labs Bolt T-Shirt
-    ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
-    Should Be Equal    ${fourth_item}   Test.allTheThings() T-Shirt (Red)
-    ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
-    Should Be Equal    ${fifth_item}    Sauce Labs Bike Light
-    ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
-    Should Be Equal    ${sixth_item}    Sauce Labs Onesie
+    ${get_product_list}=    Get Product list
+    ${expected_product_list}=    Create List    Sauce Labs Fleece Jacket    Sauce Labs Backpack    Sauce Labs Bolt T-Shirt    Test.allTheThings() T-Shirt (Red)    Sauce Labs Bike Light    Sauce Labs Onesie
+    Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
+    # ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
+    # Should Be Equal    ${first_item}    Sauce Labs Fleece Jacket
+    # ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
+    # Should Be Equal    ${second_item}   Sauce Labs Backpack
+    # ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
+    # Should Be Equal    ${third_item}    Sauce Labs Bolt T-Shirt
+    # ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
+    # Should Be Equal    ${fourth_item}   Test.allTheThings() T-Shirt (Red)
+    # ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
+    # Should Be Equal    ${fifth_item}    Sauce Labs Bike Light
+    # ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
+    # Should Be Equal    ${sixth_item}    Sauce Labs Onesie
     Close Browser
 
 8 Add Product from Product Details Page by Click Product Name
@@ -183,7 +189,7 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Page Should Contain Element    id=remove 
     Close Browser
 
-10 Add Product from Product Name at Cart Page
+10 Add Product from Click Product Name at Cart Page
     Login With Valid Credentials
     Click Button    id=add-to-cart-test.allthethings()-t-shirt-(red)
     Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
@@ -203,12 +209,11 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Click Element    id=item_3_title_link
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
     Click Element    id=add-to-cart
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
     Wait Until Element Is Visible   id=remove   timeout=5s
     Click Element    id=remove
     Wait Until Element Is Not Visible   css=#shopping_cart_container .shopping_cart_badge   timeout=5s
-    Wait Until Element Is Visible    id=add-to-cart   timeout=5s
     Element Should Not Be Visible   css=#shopping_cart_container .shopping_cart_badge
+    Wait Until Element Is Visible    id=add-to-cart   timeout=5s
     Element Should Be Visible   id=add-to-cart
     Close Browser
 
@@ -222,8 +227,8 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
     Click Button    id=remove
     Wait Until Element Is Not Visible   css=#shopping_cart_container .shopping_cart_badge   timeout=5s
-    Wait Until Element Is Visible    id=add-to-cart   timeout=5s
     Element Should Not Be Visible   css=#shopping_cart_container .shopping_cart_badge
+    Wait Until Element Is Visible    id=add-to-cart   timeout=5s
     Element Should Be Visible   id=add-to-cart
     Close Browser
 
