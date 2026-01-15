@@ -9,4 +9,3 @@ Add 5 item to cart
     Click Button    id=add-to-cart-sauce-labs-fleece-jacket
     Click Button    id=add-to-cart-sauce-labs-onesie
     
-    
