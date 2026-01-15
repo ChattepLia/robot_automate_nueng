@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ${CURDIR}/../resources/globle_variables.resource
+Resource   ${CURDIR}/../resources/global_variables.resource
 
 *** Keywords ***
 Open Chrome Without Password Dialog

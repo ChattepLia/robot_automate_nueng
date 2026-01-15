@@ -1,9 +1,9 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
-Resource   ${CURDIR}/../resources/globle_variables.resource
-Resource   ${CURDIR}/../resources/product.resource
-Resource   ${CURDIR}/../keywords/browser.robot
+Resource   ${CURDIR}/../resources/global_variables.resource
+Resource   ${CURDIR}/../resources/product_variables.resource
+Resource   ${CURDIR}/../keywords/global_keywords.robot
 Resource   ${CURDIR}/../keywords/login_keywords.robot
 Resource   ${CURDIR}/../keywords/product_keywords.robot
 
