@@ -55,7 +55,7 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 3 Remove Product from Cart
     Login With Valid Credentials
     #Add Product To Cart
-    Add 5 item to cart
+    Add 5 Items to Cart
     #Remove Products from cart
     Click Button    id=remove-sauce-labs-backpack
     Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    4
@@ -79,18 +79,23 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Select From List By Value    css=.product_sort_container    az
     Wait Until Element Contains    css=.product_sort_container    Name (A to Z)    timeout=5s
     Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Sauce Labs Backpack  timeout=5s
-    ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
-    Should Be Equal    ${first_item}    Sauce Labs Backpack
-    ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
-    Should Be Equal    ${second_item}   Sauce Labs Bike Light
-    ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
-    Should Be Equal    ${third_item}    Sauce Labs Bolt T-Shirt
-    ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
-    Should Be Equal    ${fourth_item}   Sauce Labs Fleece Jacket
-    ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
-    Should Be Equal    ${fifth_item}    Sauce Labs Onesie
-    ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
-    Should Be Equal    ${sixth_item}    Test.allTheThings() T-Shirt (Red)
+    #Create list and verify order
+    ${get_product_list}=    Get Product list
+    ${expected_product_list}=    Create List    Sauce Labs Backpack    Sauce Labs Bike Light    Sauce Labs Bolt T-Shirt    Sauce Labs Fleece Jacket    Sauce Labs Onesie    Test.allTheThings() T-Shirt (Red)
+    Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
+
+    # ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
+    # Should Be Equal    ${first_item}    Sauce Labs Backpack
+    # ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
+    # Should Be Equal    ${second_item}   Sauce Labs Bike Light
+    # ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
+    # Should Be Equal    ${third_item}    Sauce Labs Bolt T-Shirt
+    # ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
+    # Should Be Equal    ${fourth_item}   Sauce Labs Fleece Jacket
+    # ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
+    # Should Be Equal    ${fifth_item}    Sauce Labs Onesie
+    # ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
+    # Should Be Equal    ${sixth_item}    Test.allTheThings() T-Shirt (Red)
     Close Browser
 
 5 Sorting by Z to A
@@ -98,18 +103,22 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Select From List By Value    css=.product_sort_container    za
     Wait Until Element Contains    css=.product_sort_container    Name (Z to A)    timeout=5s
     Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Test.allTheThings() T-Shirt (Red)  timeout=5s
-    ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
-    Should Be Equal    ${first_item}    Test.allTheThings() T-Shirt (Red)
-    ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
-    Should Be Equal    ${second_item}   Sauce Labs Onesie
-    ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
-    Should Be Equal    ${third_item}    Sauce Labs Fleece Jacket
-    ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
-    Should Be Equal    ${fourth_item}   Sauce Labs Bolt T-Shirt
-    ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
-    Should Be Equal    ${fifth_item}    Sauce Labs Bike Light
-    ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
-    Should Be Equal    ${sixth_item}    Sauce Labs Backpack
+    # Create list and verify order
+    ${get_product_list}=    Get Product list
+    ${expected_product_list}=    Create List    Test.allTheThings() T-Shirt (Red)    Sauce Labs Onesie    Sauce Labs Fleece Jacket    Sauce Labs Bolt T-Shirt    Sauce Labs Bike Light    Sauce Labs Backpack
+    Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
+    # ${first_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[1]
+    # Should Be Equal    ${first_item}    Test.allTheThings() T-Shirt (Red)
+    # ${second_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[2]
+    # Should Be Equal    ${second_item}   Sauce Labs Onesie
+    # ${third_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[3]
+    # Should Be Equal    ${third_item}    Sauce Labs Fleece Jacket
+    # ${fourth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[4]
+    # Should Be Equal    ${fourth_item}   Sauce Labs Bolt T-Shirt
+    # ${fifth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[5]
+    # Should Be Equal    ${fifth_item}    Sauce Labs Bike Light
+    # ${sixth_item}=    Get Text    xpath=(//div[contains(@class,'inventory_item_name')])[6]
+    # Should Be Equal    ${sixth_item}    Sauce Labs Backpack
     Close Browser
 
 6 Sorting by Price Low to High

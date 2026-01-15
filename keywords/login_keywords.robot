@@ -1,7 +1,9 @@
 *** Settings ***
 Library   SeleniumLibrary
 Resource   ${CURDIR}/../resources/globle_variables.resource
+Resource   ${CURDIR}/../resources/login.resource
 Resource   ${CURDIR}/../keywords/browser.robot
+
 
 *** Keywords ***
 Login With Valid Credentials
