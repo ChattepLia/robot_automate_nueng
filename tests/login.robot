@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ${CURDIR}/../resources/globle_variables.resource
-Resource   ${CURDIR}/../keywords/browser.robot
+Resource   ${CURDIR}/../resources/global_variables.resource
+Resource   ${CURDIR}/../resources/login_variables.resource
+Resource   ${CURDIR}/../keywords/global_keywords.robot
 
 
 *** Test Cases ***
