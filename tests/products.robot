@@ -11,45 +11,45 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 *** Test Cases ***
 1 Add Single Product to Cart
     Login With Valid Credentials
-    Click Button    id=add-to-cart-sauce-labs-backpack
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1
-    Wait Until Element Is Visible    id=remove-sauce-labs-backpack    timeout=5s
-    Page Should Contain Element    id=remove-sauce-labs-backpack
+    Click Button    ${add_to_cart_sauce_labs_backpack_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    1
+    Wait Until Element Is Visible    ${remove_sauce_labs_backpack_xpath}    timeout=5s
+    Page Should Contain Element    ${remove_sauce_labs_backpack_xpath}
     Close Browser
 
 2 Add Multi Product to Cart
     Login With Valid Credentials
     #Add Backpack To Cart
-    Click Button    id=add-to-cart-sauce-labs-backpack
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1
-    Wait Until Element Is Visible    id=remove-sauce-labs-backpack    timeout=5s
-    Page Should Contain Element    id=remove-sauce-labs-backpack
+    Click Button    ${add_to_cart_sauce_labs_backpack_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    1
+    Wait Until Element Is Visible    ${remove_sauce_labs_backpack_xpath}    timeout=5s
+    Page Should Contain Element    ${remove_sauce_labs_backpack_xpath}
     #Add Bike Light To Cart
-    Click Button    id=add-to-cart-sauce-labs-bike-light
-    Wait Until Element Contains  css=#shopping_cart_container .shopping_cart_badge    2    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    2
-    Wait Until Element Is Visible    id=remove-sauce-labs-bike-light    timeout=5s
-    Page Should Contain Element    id=remove-sauce-labs-bike-light
+    Click Button    ${add_to_cart_sauce_labs_bike_light_xpath}
+    Wait Until Element Contains  ${shopping_cart_badge_xpath}    2    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    2
+    Wait Until Element Is Visible    ${remove_sauce_labs_bike_light_xpath}    timeout=5s
+    Page Should Contain Element    ${remove_sauce_labs_bike_light_xpath}
     #Add Bolt T-Shirt To Cart
-    Click Button    id=add-to-cart-sauce-labs-bolt-t-shirt
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    3    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    3
-    Wait Until Element Is Visible    id=remove-sauce-labs-bolt-t-shirt    timeout=5s
-    Page Should Contain Element    id=remove-sauce-labs-bolt-t-shirt
+    Click Button    ${add_to_cart_sauce_labs_bolt_tshirt_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    3    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    3
+    Wait Until Element Is Visible    ${remove_sauce_labs_bolt_tshirt_xpath}    timeout=5s
+    Page Should Contain Element    ${remove_sauce_labs_bolt_tshirt_xpath}
     #Add Fleece Jacket To Cart
-    Click Button    id=add-to-cart-sauce-labs-fleece-jacket
-    wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    4    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    4
-    Wait Until Element Is Visible    id=remove-sauce-labs-fleece-jacket    timeout=5s
-    Page Should Contain Element    id=remove-sauce-labs-fleece-jacket
+    Click Button    ${add_to_cart_sauce_labs_fleece_jacket_xpath}
+    wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    4
+    Wait Until Element Is Visible    ${remove_sauce_labs_fleece_jacket_xpath}    timeout=5s
+    Page Should Contain Element    ${remove_sauce_labs_fleece_jacket_xpath}
     #Add Onesie To Cart
-    Click Button    id=add-to-cart-sauce-labs-onesie
-    wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    5    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    5
-    Wait Until Element Is Visible    id=remove-sauce-labs-onesie    timeout=5s
-    Page Should Contain Element    id=remove-sauce-labs-onesie
+    Click Button    ${add_to_cart_sauce_labs_onesie_xpath}
+    wait Until Element Contains   ${shopping_cart_badge_xpath}    5    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    5
+    Wait Until Element Is Visible    ${remove_sauce_labs_onesie_xpath}    timeout=5s
+    Page Should Contain Element    ${remove_sauce_labs_onesie_xpath}
     Close Browser
 
 3 Remove Product from Cart
@@ -57,32 +57,32 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     #Add Product To Cart
     Add 5 Items to Cart
     #Remove Products from cart
-    Click Button    id=remove-sauce-labs-backpack
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    4    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    4
-    Page Should Contain Element    id=add-to-cart-sauce-labs-backpack
-    Click Button    id=remove-sauce-labs-bike-light
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    3    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    3
-    Page Should Contain Element    id=add-to-cart-sauce-labs-bike-light
-    Click Button    id=remove-sauce-labs-bolt-t-shirt
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    2    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    2
-    Page Should Contain Element    id=add-to-cart-sauce-labs-bolt-t-shirt
-    Click Button    id=remove-sauce-labs-fleece-jacket
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1
-    Page Should Contain Element    id=add-to-cart-sauce-labs-fleece-jacket
-    Click Button    id=remove-sauce-labs-onesie
-    Page Should Not Contain Element    css=#shopping_cart_container .shopping_cart_badge
-    Page Should Contain Element    id=add-to-cart-sauce-labs-onesie
+    Click Button    ${remove_sauce_labs_backpack_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    4
+    Page Should Contain Element    ${add_to_cart_sauce_labs_backpack_xpath}
+    Click Button    ${remove_sauce_labs_bike_light_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    3    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    3
+    Page Should Contain Element    ${add_to_cart_sauce_labs_bike_light_xpath}
+    Click Button    ${remove_sauce_labs_bolt_tshirt_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    2    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    2
+    Page Should Contain Element    ${add_to_cart_sauce_labs_bolt_tshirt_xpath}
+    Click Button    ${remove_sauce_labs_fleece_jacket_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    1
+    Page Should Contain Element    ${add_to_cart_sauce_labs_fleece_jacket_xpath}
+    Click Button    ${remove_sauce_labs_onesie_xpath}
+    Page Should Not Contain Element    ${shopping_cart_badge_xpath}
+    Page Should Contain Element    ${add_to_cart_sauce_labs_onesie_xpath}
     Close Browser
 
 4 Sorting by A to Z
     Login With Valid Credentials
-    Select From List By Value    css=.product_sort_container    az
-    Wait Until Element Contains    css=.product_sort_container    Name (A to Z)    timeout=5s
-    Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Sauce Labs Backpack  timeout=5s
+    Select From List By Value    ${product_sort_container_xpath}    az
+    Wait Until Element Contains    ${product_sort_container_xpath}    Name (A to Z)    timeout=5s
+    Wait Until Element Contains   ${inventory_item_name_1_xpath}   Sauce Labs Backpack  timeout=5s
     #Create list and verify order
     ${get_product_list}=    Get Product list
     ${expected_product_list}=    Create List    Sauce Labs Backpack    Sauce Labs Bike Light    Sauce Labs Bolt T-Shirt    Sauce Labs Fleece Jacket    Sauce Labs Onesie    Test.allTheThings() T-Shirt (Red)
@@ -104,9 +104,9 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 
 5 Sorting by Z to A
     Login With Valid Credentials
-    Select From List By Value    css=.product_sort_container    za
-    Wait Until Element Contains    css=.product_sort_container    Name (Z to A)    timeout=5s
-    Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Test.allTheThings() T-Shirt (Red)  timeout=5s
+    Select From List By Value    ${product_sort_container_xpath}    za
+    Wait Until Element Contains    ${product_sort_container_xpath}    Name (Z to A)    timeout=5s
+    Wait Until Element Contains   ${inventory_item_name_1_xpath}   Test.allTheThings() T-Shirt (Red)  timeout=5s
     # Create list and verify order
     ${get_product_list}=    Get Product list
     ${expected_product_list}=    Create List    Test.allTheThings() T-Shirt (Red)    Sauce Labs Onesie    Sauce Labs Fleece Jacket    Sauce Labs Bolt T-Shirt    Sauce Labs Bike Light    Sauce Labs Backpack
@@ -127,9 +127,9 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 
 6 Sorting by Price Low to High
     Login With Valid Credentials
-    Select From List By Value    css=.product_sort_container    lohi
-    Wait Until Element Contains    css=.active_option    Price (low to high)    timeout=5s
-    Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Sauce Labs Onesie  timeout=5s
+    Select From List By Value    ${product_sort_container_xpath}    lohi
+    Wait Until Element Contains    ${active_option_xpath}    Price (low to high)    timeout=5s
+    Wait Until Element Contains   ${inventory_item_name_1_xpath}   Sauce Labs Onesie  timeout=5s
     ${get_product_list}=    Get Product list
     ${expected_product_list}=    Create List    Sauce Labs Onesie    Sauce Labs Bike Light    Sauce Labs Bolt T-Shirt    Test.allTheThings() T-Shirt (Red)    Sauce Labs Backpack    Sauce Labs Fleece Jacket
     Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
@@ -149,9 +149,9 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 
 7 Sorting by Price High to Low
     Login With Valid Credentials
-    Select From List By Value    css=.product_sort_container    hilo
-    Wait Until Element Contains    css=.active_option    Price (high to low)    timeout=5s
-    Wait Until Element Contains   xpath=(//div[contains(@class,'inventory_item_name')])[1]   Sauce Labs Fleece Jacket  timeout=5s
+    Select From List By Value    ${product_sort_container_xpath}    hilo
+    Wait Until Element Contains    ${active_option_xpath}    Price (high to low)    timeout=5s
+    Wait Until Element Contains   ${inventory_item_name_1_xpath}   Sauce Labs Fleece Jacket  timeout=5s
     ${get_product_list}=    Get Product list
     ${expected_product_list}=    Create List    Sauce Labs Fleece Jacket    Sauce Labs Backpack    Sauce Labs Bolt T-Shirt    Test.allTheThings() T-Shirt (Red)    Sauce Labs Bike Light    Sauce Labs Onesie
     Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
@@ -171,76 +171,76 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 
 8 Add Product from Product Details Page by Click Product Name
     Login With Valid Credentials
-    Click Element    xpath=//div[contains(text(),'Sauce Labs Backpack')]
+    Click Element    ${sauce_labs_backpack_name_xpath}
     Wait Until Location Is    ${sauce_labs_backpack_url}    timeout=5s
-    Wait Until Element Is Visible    id=add-to-cart  timeout=5s
-    Click Button    id=add-to-cart
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1   
-    Wait Until Element Is Visible    id=remove   timeout=5s
-    Page Should Contain Element    id=remove 
+    Wait Until Element Is Visible    ${add_to_cart_xpath}  timeout=5s
+    Click Button    ${add_to_cart_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    1   
+    Wait Until Element Is Visible    ${remove_xpath}   timeout=5s
+    Page Should Contain Element    ${remove_xpath}
     Close Browser
 
 9 Add Product from Product Details Page by Click Product Image
     Login With Valid Credentials
-    Click Element    id=item_2_img_link
+    Click Element    ${item_2_img_link_xpath}
     Wait Until Location Is    ${sauce_labs_onesie_url}    timeout=5s
-    Wait Until Element Is Visible    id=add-to-cart  timeout=5s
-    Click Button    id=add-to-cart
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1 
-    Wait Until Element Is Visible    id=remove   timeout=5s
-    Page Should Contain Element    id=remove 
+    Wait Until Element Is Visible    ${add_to_cart_xpath}  timeout=5s
+    Click Button    ${add_to_cart_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    1 
+    Wait Until Element Is Visible    ${remove_xpath}   timeout=5s
+    Page Should Contain Element    ${remove_xpath}
     Close Browser
 
 10 Add Product from Click Product Name at Cart Page
     Login With Valid Credentials
-    Click Button    id=add-to-cart-test.allthethings()-t-shirt-(red)
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Click Element    id=shopping_cart_container
+    Click Button    ${add_to_cart_test_allthethings_tshirt_red_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Click Element    ${shopping_cart_container_xpath}
     Wait Until Location Is    ${cart_url}    timeout=5s
-    Click Element    id=item_3_title_link
+    Click Element    ${item_3_title_link_xpath}
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
-    Click Button    id=remove
-    Wait Until Element Is Not Visible   css=#shopping_cart_container .shopping_cart_badge    timeout=5s
-    Click Button    id=add-to-cart
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1
+    Click Button    ${remove_xpath}
+    Wait Until Element Is Not Visible   ${shopping_cart_badge_xpath}    timeout=5s
+    Click Button    ${add_to_cart_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Element Text Should Be    ${shopping_cart_badge_xpath}    1
     Close Browser
 
 11 Remove Product from Cart at Product Details Page
     Login With Valid Credentials
-    Click Element    id=item_3_title_link
+    Click Element    ${item_3_title_link_xpath}
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
-    Click Element    id=add-to-cart
-    Wait Until Element Is Visible   id=remove   timeout=5s
-    Click Element    id=remove
-    Wait Until Element Is Not Visible   css=#shopping_cart_container .shopping_cart_badge   timeout=5s
-    Element Should Not Be Visible   css=#shopping_cart_container .shopping_cart_badge
-    Wait Until Element Is Visible    id=add-to-cart   timeout=5s
-    Element Should Be Visible   id=add-to-cart
+    Click Element    ${add_to_cart_xpath}
+    Wait Until Element Is Visible   ${remove_xpath}   timeout=5s
+    Click Element    ${remove_xpath}
+    Wait Until Element Is Not Visible   ${shopping_cart_badge_xpath}   timeout=5s
+    Element Should Not Be Visible   ${shopping_cart_badge_xpath}
+    Wait Until Element Is Visible    ${add_to_cart_xpath}   timeout=5s
+    Element Should Be Visible   ${add_to_cart_xpath}
     Close Browser
 
 12 Remove Product from Cart at Cart Page
     Login With Valid Credentials
-    Click Button    id=add-to-cart-test.allthethings()-t-shirt-(red)
-    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
-    Click Element    id=shopping_cart_container
+    Click Button    ${add_to_cart_test_allthethings_tshirt_red_xpath}
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Click Element    ${shopping_cart_container_xpath}
     Wait Until Location Is    ${cart_url}    timeout=5s
-    Click Element    id=item_3_title_link
+    Click Element    ${item_3_title_link_xpath}
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
-    Click Button    id=remove
-    Wait Until Element Is Not Visible   css=#shopping_cart_container .shopping_cart_badge   timeout=5s
-    Element Should Not Be Visible   css=#shopping_cart_container .shopping_cart_badge
-    Wait Until Element Is Visible    id=add-to-cart   timeout=5s
-    Element Should Be Visible   id=add-to-cart
+    Click Button    ${remove_xpath}
+    Wait Until Element Is Not Visible   ${shopping_cart_badge_xpath}   timeout=5s
+    Element Should Not Be Visible   ${shopping_cart_badge_xpath}
+    Wait Until Element Is Visible    ${add_to_cart_xpath}   timeout=5s
+    Element Should Be Visible   ${add_to_cart_xpath}
     Close Browser
 
 13 CLick Back Buttom at Product Details Page
     Login With Valid Credentials
-    Click Element    xpath=//div[contains(text(),'Test.allTheThings() T-Shirt (Red)')] 
+    Click Element    ${test_allthethings_tshirt_red_name_xpath} 
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
-    Click Element    id=back-to-products
+    Click Element    ${back_to_products_xpath}
     Wait Until Location Is    ${inventory_url}    timeout=5s
     Location Should Be   ${inventory_url}
     Close Browser
