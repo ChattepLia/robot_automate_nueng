@@ -58,15 +58,19 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
     Add 5 Items to Cart
     #Remove Products from cart
     Click Button    id=remove-sauce-labs-backpack
+    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    4    timeout=5s
     Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    4
     Page Should Contain Element    id=add-to-cart-sauce-labs-backpack
     Click Button    id=remove-sauce-labs-bike-light
+    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    3    timeout=5s
     Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    3
     Page Should Contain Element    id=add-to-cart-sauce-labs-bike-light
     Click Button    id=remove-sauce-labs-bolt-t-shirt
+    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    2    timeout=5s
     Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    2
     Page Should Contain Element    id=add-to-cart-sauce-labs-bolt-t-shirt
     Click Button    id=remove-sauce-labs-fleece-jacket
+    Wait Until Element Contains   css=#shopping_cart_container .shopping_cart_badge    1    timeout=5s
     Element Text Should Be    css=#shopping_cart_container .shopping_cart_badge    1
     Page Should Contain Element    id=add-to-cart-sauce-labs-fleece-jacket
     Click Button    id=remove-sauce-labs-onesie
