@@ -15,19 +15,14 @@ Resource   ${CURDIR}/../keywords/login_keywords.robot
     Input Text    ${login_user_name_id}    ${problem_user}
     Input Text    ${login_password_id}     ${password}
     Click Button    ${login_button_id}
-    Wait Until Location Is    ${inventory_url}    timeout=5s
-    Location Should Be    ${inventory_url}
-    Page Should Contain        ${inventory_page_title}
+    Click Login Button and Assert Valid User
     Close Browser
 
 3 Login Performance Glitch User
     Open Chrome Without Password Dialog
     Input Text    ${login_user_name_id}    ${performance_glitch_user}
     Input Text    ${login_password_id}     ${password}
-    Click Button    ${login_button_id}
-    Wait Until Location Is    ${inventory_url}    timeout=5s
-    Location Should Be    ${inventory_url}
-    Page Should Contain        ${inventory_page_title}
+    Click Login Button and Assert Valid User
     Close Browser
 
 4 Login Invalid User Name
@@ -35,6 +30,7 @@ Resource   ${CURDIR}/../keywords/login_keywords.robot
     Input Text    ${login_user_name_id}    ${invalid_data}
     Input Text    ${login_password_id}     ${password}
     Click Button    ${login_button_id}
+    Wait Until Element Contains   ${login_error_message_css}    ${invalid_user_password}    timeout=5s
     Element Should Contain    ${login_error_message_css}    ${invalid_user_password}
     Close Browser
 
@@ -43,6 +39,7 @@ Resource   ${CURDIR}/../keywords/login_keywords.robot
     Input Text    ${login_user_name_id}    ${standard_user}
     Input Text    ${login_password_id}     ${invalid_data}
     Click Button    ${login_button_id}
+    Wait Until Element Contains   ${login_error_message_css}    ${invalid_user_password}    timeout=5s
     Element Should Contain    ${login_error_message_css}    ${invalid_user_password}
     Close Browser
     
@@ -51,6 +48,7 @@ Resource   ${CURDIR}/../keywords/login_keywords.robot
     Input Text    ${login_user_name_id}    ${invalid_data}
     Input Text    ${login_password_id}     ${invalid_data}
     Click Button    ${login_button_id}
+    Wait Until Element Contains   ${login_error_message_css}    ${invalid_user_password}    timeout=5s
     Element Should Contain    ${login_error_message_css}    ${invalid_user_password}
     Close Browser
 
@@ -58,6 +56,7 @@ Resource   ${CURDIR}/../keywords/login_keywords.robot
     Open Chrome Without Password Dialog
     Input Text    ${login_password_id}     ${password}
     Click Button    ${login_button_id}
+    Wait Until Element Contains   ${login_error_message_css}    ${empty_user_message}    timeout=5s
     Element Should Contain    ${login_error_message_css}    ${empty_user_message}
     Close Browser
 
