@@ -15,7 +15,7 @@ ${invalid_data}    invalid
 ${login_user_name_xpath}    id:user-name
 ${login_password_xpath}    id:password
 ${login_button_xpath}    id:login-button
-${login_error_message_cssxpath}    css:.error-message-container
+${login_error_message_xpath}    css:.error-message-container
 
 #Messages login
 ${inventory_page_title}    Swag Labs
