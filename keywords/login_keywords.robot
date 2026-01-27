@@ -13,3 +13,9 @@ Login With Valid Credentials
     Input Text    id:password    ${password}
     Click Button    id:login-button
     Wait Until Location Is    ${inventory_url}    timeout=5s
+
+Click Login Button and Assert Valid User
+    Click Button    ${login_button_id}
+    Wait Until Location Is    ${inventory_url}    timeout=5s
+    Location Should Be    ${inventory_url}
+    Page Should Contain        ${inventory_page_title}
