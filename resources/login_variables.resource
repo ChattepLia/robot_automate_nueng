@@ -12,10 +12,10 @@ ${password}    secret_sauce
 ${invalid_data}    invalid
 
 #Locators for login page
-${login_user_name_id}    id:user-name
-${login_password_id}    id:password
-${login_button_id}    id:login-button
-${login_error_message_css}    css:.error-message-container
+${login_user_name_xpath}    id:user-name
+${login_password_xpath}    id:password
+${login_button_xpath}    id:login-button
+${login_error_message_cssxpath}    css:.error-message-container
 
 #Messages login
 ${inventory_page_title}    Swag Labs
