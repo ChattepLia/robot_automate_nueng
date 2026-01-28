@@ -5,6 +5,7 @@ Resource   ${CURDIR}/../resources/login_variables.resource
 Resource   ${CURDIR}/../keywords/global_keywords.robot
 Resource   ${CURDIR}/../keywords/login_keywords.robot
 
+Documentation    Test cases for login page
 
 *** Test Cases ***
 1 Login Standard User
