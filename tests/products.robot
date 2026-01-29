@@ -11,45 +11,23 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 *** Test Cases ***
 1 Add Single Product to Cart
     Login With Valid Credentials
-    Click Button    ${add_to_cart_sauce_labs_backpack_xpath}
-    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
-    Element Text Should Be    ${shopping_cart_badge_xpath}    1
-    Wait Until Element Is Visible    ${remove_sauce_labs_backpack_xpath}    timeout=5s
-    Page Should Contain Element    ${remove_sauce_labs_backpack_xpath}
+    #Add Backpack To Cart by keyword
+    Add backpack to cart from list page
     Close Browser
 
 2 Add Multi Product to Cart
     Login With Valid Credentials
-    #Add Backpack To Cart
-    Click Button    ${add_to_cart_sauce_labs_backpack_xpath}
-    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
-    Element Text Should Be    ${shopping_cart_badge_xpath}    1
-    Wait Until Element Is Visible    ${remove_sauce_labs_backpack_xpath}    timeout=5s
-    Page Should Contain Element    ${remove_sauce_labs_backpack_xpath}
-    #Add Bike Light To Cart
-    Click Button    ${add_to_cart_sauce_labs_bike_light_xpath}
-    Wait Until Element Contains  ${shopping_cart_badge_xpath}    2    timeout=5s
-    Element Text Should Be    ${shopping_cart_badge_xpath}    2
-    Wait Until Element Is Visible    ${remove_sauce_labs_bike_light_xpath}    timeout=5s
-    Page Should Contain Element    ${remove_sauce_labs_bike_light_xpath}
-    #Add Bolt T-Shirt To Cart
-    Click Button    ${add_to_cart_sauce_labs_bolt_tshirt_xpath}
-    Wait Until Element Contains   ${shopping_cart_badge_xpath}    3    timeout=5s
-    Element Text Should Be    ${shopping_cart_badge_xpath}    3
-    Wait Until Element Is Visible    ${remove_sauce_labs_bolt_tshirt_xpath}    timeout=5s
-    Page Should Contain Element    ${remove_sauce_labs_bolt_tshirt_xpath}
-    #Add Fleece Jacket To Cart
-    Click Button    ${add_to_cart_sauce_labs_fleece_jacket_xpath}
-    wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
-    Element Text Should Be    ${shopping_cart_badge_xpath}    4
-    Wait Until Element Is Visible    ${remove_sauce_labs_fleece_jacket_xpath}    timeout=5s
-    Page Should Contain Element    ${remove_sauce_labs_fleece_jacket_xpath}
-    #Add Onesie To Cart
-    Click Button    ${add_to_cart_sauce_labs_onesie_xpath}
-    wait Until Element Contains   ${shopping_cart_badge_xpath}    5    timeout=5s
-    Element Text Should Be    ${shopping_cart_badge_xpath}    5
-    Wait Until Element Is Visible    ${remove_sauce_labs_onesie_xpath}    timeout=5s
-    Page Should Contain Element    ${remove_sauce_labs_onesie_xpath}
+    ${products}=    Create List    backpack    bike_light    bolt_tshirt    fleece_jacket    onesie
+    FOR    ${index}    ${product}    IN ENUMERATE    @{products}
+        ${add_btn}=    Set Variable    ${add_to_cart_sauce_labs_${product}_xpath}
+        ${remove_btn}=    Set Variable    ${remove_sauce_labs_${product}_xpath}
+        ${expected_count}=    Evaluate    ${index}+1
+        Click Button    ${add_btn}
+        Wait Until Element Contains    ${shopping_cart_badge_xpath}    ${expected_count}    timeout=5s
+        Element Text Should Be    ${shopping_cart_badge_xpath}    ${expected_count}
+        Wait Until Element Is Visible    ${remove_btn}    timeout=5s
+        Page Should Contain Element    ${remove_btn}
+    END
     Close Browser
 
 3 Remove Product from Cart
@@ -195,10 +173,8 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 
 10 Add Product from Click Product Name at Cart Page
     Login With Valid Credentials
-    Click Button    ${add_to_cart_test_allthethings_tshirt_red_xpath}
-    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
-    Click Element    ${shopping_cart_container_xpath}
-    Wait Until Location Is    ${cart_url}    timeout=5s
+    #Add tsirt red by keyword
+    Add tsirt red to cart from list page
     Click Element    ${item_3_title_link_xpath}
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
     Click Button    ${remove_xpath}
@@ -223,8 +199,7 @@ Resource   ${CURDIR}/../keywords/product_keywords.robot
 
 12 Remove Product from Cart at Cart Page
     Login With Valid Credentials
-    Click Button    ${add_to_cart_test_allthethings_tshirt_red_xpath}
-    Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
+    Add tsirt red to cart from list page
     Click Element    ${shopping_cart_container_xpath}
     Wait Until Location Is    ${cart_url}    timeout=5s
     Click Element    ${item_3_title_link_xpath}
