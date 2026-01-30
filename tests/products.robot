@@ -7,17 +7,16 @@ Resource   ${CURDIR}/../resources/product_variables.resource
 Resource   ${CURDIR}/../keywords/global_keywords.robot
 Resource   ${CURDIR}/../keywords/login_keywords.robot
 Resource   ${CURDIR}/../keywords/product_keywords.robot
+Test Setup    Login With Valid Credentials
 Test Teardown    Close Browser
 
 
 *** Test Cases ***
 1 Add Single Product to Cart
-    Login With Valid Credentials
     #Add Backpack To Cart by keyword
     Add backpack to cart from list page
 
 2 Add Multi Product to Cart
-    Login With Valid Credentials
     ${products}=    Create List    backpack    bike_light    bolt_tshirt    fleece_jacket    onesie
     FOR    ${index}    ${product}    IN ENUMERATE    @{products}
         ${add_btn}=    Set Variable    ${add_to_cart_sauce_labs_${product}_xpath}
@@ -31,7 +30,6 @@ Test Teardown    Close Browser
     END
 
 3 Remove Product from Cart
-    Login With Valid Credentials
     #Add Product To Cart
     Add 5 Items to Cart
     #Remove Products from cart
@@ -54,7 +52,6 @@ Test Teardown    Close Browser
     END
 
 4 Sorting by A to Z
-    Login With Valid Credentials
     Select From List By Value    ${product_sort_container_xpath}    az
     Wait Until Element Contains    ${product_sort_container_xpath}    Name (A to Z)    timeout=5s
     Wait Until Element Contains   ${inventory_item_name_1_xpath}   Sauce Labs Backpack  timeout=5s
@@ -64,7 +61,6 @@ Test Teardown    Close Browser
     Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
 
 5 Sorting by Z to A
-    Login With Valid Credentials
     Select From List By Value    ${product_sort_container_xpath}    za
     Wait Until Element Contains    ${product_sort_container_xpath}    Name (Z to A)    timeout=5s
     Wait Until Element Contains   ${inventory_item_name_1_xpath}   Test.allTheThings() T-Shirt (Red)  timeout=5s
@@ -74,7 +70,6 @@ Test Teardown    Close Browser
     Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
 
 6 Sorting by Price Low to High
-    Login With Valid Credentials
     Select From List By Value    ${product_sort_container_xpath}    lohi
     Wait Until Element Contains    ${active_option_xpath}    Price (low to high)    timeout=5s
     Wait Until Element Contains   ${inventory_item_name_1_xpath}   Sauce Labs Onesie  timeout=5s
@@ -83,7 +78,6 @@ Test Teardown    Close Browser
     Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
 
 7 Sorting by Price High to Low
-    Login With Valid Credentials
     Select From List By Value    ${product_sort_container_xpath}    hilo
     Wait Until Element Contains    ${active_option_xpath}    Price (high to low)    timeout=5s
     Wait Until Element Contains   ${inventory_item_name_1_xpath}   Sauce Labs Fleece Jacket  timeout=5s
@@ -92,7 +86,6 @@ Test Teardown    Close Browser
     Lists Should Be Equal    ${get_product_list}    ${expected_product_list}
 
 8 Add Product from Product Details Page by Click Product Name
-    Login With Valid Credentials
     Click Element    ${sauce_labs_backpack_name_xpath}
     Wait Until Location Is    ${sauce_labs_backpack_url}    timeout=5s
     Wait Until Element Is Visible    ${add_to_cart_xpath}  timeout=5s
@@ -103,7 +96,6 @@ Test Teardown    Close Browser
     Page Should Contain Element    ${remove_xpath}
 
 9 Add Product from Product Details Page by Click Product Image
-    Login With Valid Credentials
     Click Element    ${item_2_img_link_xpath}
     Wait Until Location Is    ${sauce_labs_onesie_url}    timeout=5s
     Wait Until Element Is Visible    ${add_to_cart_xpath}  timeout=5s
@@ -114,7 +106,6 @@ Test Teardown    Close Browser
     Page Should Contain Element    ${remove_xpath}
 
 10 Add Product from Click Product Name at Cart Page
-    Login With Valid Credentials
     #Add tsirt red by keyword
     Add tsirt red to cart from list page
     Click Element    ${item_3_title_link_xpath}
@@ -126,7 +117,6 @@ Test Teardown    Close Browser
     Element Text Should Be    ${shopping_cart_badge_xpath}    1
 
 11 Remove Product from Cart at Product Details Page
-    Login With Valid Credentials
     Click Element    ${item_3_title_link_xpath}
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
     Click Element    ${add_to_cart_xpath}
@@ -138,7 +128,6 @@ Test Teardown    Close Browser
     Element Should Be Visible   ${add_to_cart_xpath}
 
 12 Remove Product from Cart at Cart Page
-    Login With Valid Credentials
     Add tsirt red to cart from list page
     Click Element    ${shopping_cart_container_xpath}
     Wait Until Location Is    ${cart_url}    timeout=5s
@@ -151,7 +140,6 @@ Test Teardown    Close Browser
     Element Should Be Visible   ${add_to_cart_xpath}
 
 13 CLick Back Buttom at Product Details Page
-    Login With Valid Credentials
     Click Element    ${test_allthethings_tshirt_red_name_xpath} 
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
     Click Element    ${back_to_products_xpath}

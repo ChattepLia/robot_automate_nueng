@@ -9,7 +9,7 @@ Test Teardown    Close Browser
 Documentation    Test cases for login page
 
 *** Test Cases ***
-1 Login Standard User
+1 Login Standard Users
     login with valid credentials
 
 2 Login Problem User
