@@ -18,6 +18,7 @@ Test Teardown    Close Browser
 
 2 Add Multi Product to Cart
     ${products}=    Create List    backpack    bike_light    bolt_tshirt    fleece_jacket    onesie
+    ${removes}=    Create List    backpack    bike_light    bolt_tshirt    fleece_jacket    onesie
     FOR    ${index}    ${product}    IN ENUMERATE    @{products}
         ${add_btn}=    Set Variable    ${add_to_cart_sauce_labs_${product}_xpath}
         ${remove_btn}=    Set Variable    ${remove_sauce_labs_${product}_xpath}
