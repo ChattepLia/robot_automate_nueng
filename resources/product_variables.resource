@@ -26,6 +26,7 @@ ${remove_sauce_labs_backpack_xpath}         id=remove-sauce-labs-backpack
 ${remove_sauce_labs_bike_light_xpath}       id=remove-sauce-labs-bike-light
 ${remove_sauce_labs_bolt_tshirt_xpath}      id=remove-sauce-labs-bolt-t-shirt
 ${remove_sauce_labs_fleece_jacket_xpath}    id=remove-sauce-labs-fleece-jacket
+${remove_sauce_labs_onesie_xpath}           id=remove-sauce-labs-onesie
 ${remove_sauce_lab_all_things_tshirt_red_xpath}  id=remove-test.allthethings()-t-shirt-(red)
 ${remove_xpath}                             id=remove
 
