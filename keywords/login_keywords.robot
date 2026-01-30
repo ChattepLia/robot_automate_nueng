@@ -14,7 +14,7 @@ Login With Valid Credentials
     Click Button    ${login_button_xpath}
     Wait Until Location Is    ${inventory_url}    timeout=5s
 
-Click Login Button and Assert Valid User
+Click Login Button and Assert Valid Credentials User
     Click Button    ${login_button_xpath}
     Wait Until Location Is    ${inventory_url}    timeout=5s
     Location Should Be    ${inventory_url}
