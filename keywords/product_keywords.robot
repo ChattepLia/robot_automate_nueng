@@ -12,11 +12,11 @@ Add backpack to cart from list page
     Page Should Contain Element    ${remove_sauce_labs_backpack_xpath}
 
 Add tsirt red to cart from list page
-    Click Button    ${add_to_cart_sauce_labs_bolt_t_shirt_xpath}
+    Click Button    ${add_to_cart_test_allthethings_tshirt_red_xpath}
     Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
     Element Text Should Be    ${shopping_cart_badge_xpath}    1
-    Wait Until Element Is Visible    ${remove_sauce_labs_bolt_t_shirt_xpath}    timeout=5s
-    Page Should Contain Element    ${remove_sauce_labs_bolt_t_shirt_xpath}
+    Wait Until Element Is Visible    ${remove_sauce_lab_all_things_tshirt_red_xpath}    timeout=5s
+    Page Should Contain Element    ${remove_sauce_lab_all_things_tshirt_red_xpath}
 
 Add 5 Items to Cart
     Click Button    id=add-to-cart-sauce-labs-backpack
