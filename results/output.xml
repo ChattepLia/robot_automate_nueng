@@ -1,377 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-28T17:25:32.118597" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-30T14:07:23.056058" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Automate Nueng" source="D:\02_VS_Code_Project\robot_automate_nueng">
 <suite id="s1-s1" name="Tests" source="D:\02_VS_Code_Project\robot_automate_nueng\tests">
 <suite id="s1-s1-s1" name="Products" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\products.robot">
-<test id="s1-s1-s1-t1" name="2 Add Multi Product to Cart" line="18">
-<kw name="Login With Valid Credentials" owner="login_keywords">
+<test id="s1-s1-s1-t1" name="12 Remove Product from Cart at Cart Page" line="130">
+<kw name="Login With Valid Credentials" owner="login_keywords" type="SETUP">
 <kw name="Open Chrome Without Password Dialog" owner="global_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:32.689832" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<msg time="2026-01-30T14:07:23.263279" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_experimental_option("detach",True);add_experimental_option("prefs", {"profile.password_manager_leak_detection": False})</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-28T17:25:32.689193" elapsed="3.875692"/>
+<status status="PASS" start="2026-01-30T14:07:23.262983" elapsed="1.384911"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-01-28T17:25:36.565353" elapsed="0.035547"/>
+<status status="PASS" start="2026-01-30T14:07:24.648274" elapsed="0.029803"/>
 </kw>
-<status status="PASS" start="2026-01-28T17:25:32.688021" elapsed="3.913189"/>
+<status status="PASS" start="2026-01-30T14:07:23.262338" elapsed="1.415948"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${login_user_name_xpath}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-28T17:25:36.601594" elapsed="0.117399"/>
+<status status="PASS" start="2026-01-30T14:07:24.678437" elapsed="0.012537"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:36.720055" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<msg time="2026-01-30T14:07:24.691587" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
 <arg>${login_user_name_xpath}</arg>
 <arg>${standard_user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:36.719392" elapsed="0.102856"/>
+<status status="PASS" start="2026-01-30T14:07:24.691193" elapsed="0.060038"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:36.823328" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<msg time="2026-01-30T14:07:24.751948" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
 <arg>${login_password_xpath}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:36.822662" elapsed="0.076103"/>
+<status status="PASS" start="2026-01-30T14:07:24.751531" elapsed="0.046075"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:36.899782" level="INFO">Clicking button 'id:login-button'.</msg>
+<msg time="2026-01-30T14:07:24.798135" level="INFO">Clicking button 'id:login-button'.</msg>
 <arg>${login_button_xpath}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:36.899138" elapsed="0.102812"/>
+<status status="PASS" start="2026-01-30T14:07:24.797832" elapsed="0.064252"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${inventory_url}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.002332" elapsed="0.004915"/>
+<status status="PASS" start="2026-01-30T14:07:24.862363" elapsed="0.004199"/>
 </kw>
-<status status="PASS" start="2026-01-28T17:25:32.687232" elapsed="4.320294"/>
+<status status="PASS" start="2026-01-30T14:07:23.261993" elapsed="1.604733"/>
 </kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.008773" level="INFO">${products} = ['backpack', 'bike_light', 'bolt_tshirt', 'fleece_jacket', 'onesie']</msg>
-<var>${products}</var>
-<arg>backpack</arg>
-<arg>bike_light</arg>
-<arg>bolt_tshirt</arg>
-<arg>fleece_jacket</arg>
-<arg>onesie</arg>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.007964" elapsed="0.001010"/>
-</kw>
-<for flavor="IN ENUMERATE">
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.010925" level="INFO">${add_btn} = id=add-to-cart-sauce-labs-backpack</msg>
-<var>${add_btn}</var>
-<arg>${add_to_cart_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.010324" elapsed="0.000891"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.012182" level="INFO">${remove_btn} = id=remove-sauce-labs-backpack</msg>
-<var>${remove_btn}</var>
-<arg>${remove_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.011482" elapsed="0.000891"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.013441" level="INFO">${expected_count} = 1</msg>
-<var>${expected_count}</var>
-<arg>${index}+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.012620" elapsed="0.001045"/>
-</kw>
+<kw name="Add tsirt red to cart from list page" owner="product_keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.014480" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-backpack'.</msg>
-<arg>${add_btn}</arg>
+<msg time="2026-01-30T14:07:24.867653" level="INFO">Clicking button 'id=add-to-cart-test.allthethings()-t-shirt-(red)'.</msg>
+<arg>${add_to_cart_test_allthethings_tshirt_red_xpath}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.013931" elapsed="0.071517"/>
+<status status="PASS" start="2026-01-30T14:07:24.867405" elapsed="0.045997"/>
 </kw>
 <kw name="Wait Until Element Contains" owner="SeleniumLibrary">
 <arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
+<arg>1</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.085827" elapsed="0.024431"/>
+<status status="PASS" start="2026-01-30T14:07:24.913623" elapsed="0.013530"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.111382" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '1'.</msg>
+<msg time="2026-01-30T14:07:24.927669" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '1'.</msg>
 <arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
+<arg>1</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.110611" elapsed="0.015073"/>
+<status status="PASS" start="2026-01-30T14:07:24.927368" elapsed="0.007996"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${remove_btn}</arg>
+<arg>${remove_sauce_lab_all_things_tshirt_red_xpath}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.126172" elapsed="0.017164"/>
+<status status="PASS" start="2026-01-30T14:07:24.935547" elapsed="0.009749"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.151070" level="INFO">Current page contains element 'id=remove-sauce-labs-backpack'.</msg>
-<arg>${remove_btn}</arg>
+<msg time="2026-01-30T14:07:24.949093" level="INFO">Current page contains element 'id=remove-test.allthethings()-t-shirt-(red)'.</msg>
+<arg>${remove_sauce_lab_all_things_tshirt_red_xpath}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.143678" elapsed="0.007668"/>
+<status status="PASS" start="2026-01-30T14:07:24.945512" elapsed="0.003835"/>
 </kw>
-<var name="${index}">0</var>
-<var name="${product}">backpack</var>
-<status status="PASS" start="2026-01-28T17:25:37.009992" elapsed="0.141549"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.152845" level="INFO">${add_btn} = id=add-to-cart-sauce-labs-bike-light</msg>
-<var>${add_btn}</var>
-<arg>${add_to_cart_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.152215" elapsed="0.000779"/>
+<status status="PASS" start="2026-01-30T14:07:24.867074" elapsed="0.082387"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.153978" level="INFO">${remove_btn} = id=remove-sauce-labs-bike-light</msg>
-<var>${remove_btn}</var>
-<arg>${remove_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.153264" elapsed="0.000881"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T14:07:24.950020" level="INFO">Clicking element 'id=shopping_cart_container'.</msg>
+<arg>${shopping_cart_container_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T14:07:24.949716" elapsed="0.036386"/>
 </kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.155153" level="INFO">${expected_count} = 2</msg>
-<var>${expected_count}</var>
-<arg>${index}+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.154370" elapsed="0.000931"/>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${cart_url}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-01-30T14:07:24.986444" elapsed="0.002326"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T14:07:24.989240" level="INFO">Clicking element 'id=item_3_title_link'.</msg>
+<arg>${item_3_title_link_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T14:07:24.988981" elapsed="0.041869"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${test_allthethings_tshirt_red_url}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-01-30T14:07:25.031209" elapsed="0.002457"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.156153" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-bike-light'.</msg>
-<arg>${add_btn}</arg>
+<msg time="2026-01-30T14:07:25.034144" level="INFO">Clicking button 'id=remove'.</msg>
+<arg>${remove_xpath}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.155549" elapsed="0.085663"/>
+<status status="PASS" start="2026-01-30T14:07:25.033883" elapsed="0.040797"/>
 </kw>
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
 <arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.241608" elapsed="0.018092"/>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-30T14:07:25.075154" elapsed="0.005073"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.260746" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '2'.</msg>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2026-01-30T14:07:25.084088" level="INFO">Element 'css=#shopping_cart_container .shopping_cart_badge' did not exist.</msg>
 <arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.260117" elapsed="0.014440"/>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2026-01-30T14:07:25.080501" elapsed="0.003739"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${remove_btn}</arg>
+<arg>${add_to_cart_xpath}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.274947" elapsed="0.017008"/>
+<status status="PASS" start="2026-01-30T14:07:25.084609" elapsed="0.009310"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.298871" level="INFO">Current page contains element 'id=remove-sauce-labs-bike-light'.</msg>
-<arg>${remove_btn}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.292341" elapsed="0.006866"/>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-01-30T14:07:25.101518" level="INFO">Element 'id=add-to-cart' is displayed.</msg>
+<arg>${add_to_cart_xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T14:07:25.094233" elapsed="0.007534"/>
 </kw>
-<var name="${index}">1</var>
-<var name="${product}">bike_light</var>
-<status status="PASS" start="2026-01-28T17:25:37.151841" elapsed="0.147549"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.301143" level="INFO">${add_btn} = id=add-to-cart-sauce-labs-bolt-t-shirt</msg>
-<var>${add_btn}</var>
-<arg>${add_to_cart_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.300269" elapsed="0.001056"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.302321" level="INFO">${remove_btn} = id=remove-sauce-labs-bolt-t-shirt</msg>
-<var>${remove_btn}</var>
-<arg>${remove_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.301594" elapsed="0.000912"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.303616" level="INFO">${expected_count} = 3</msg>
-<var>${expected_count}</var>
-<arg>${index}+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.302797" elapsed="0.000970"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.304591" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-bolt-t-shirt'.</msg>
-<arg>${add_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.304031" elapsed="0.066788"/>
-</kw>
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.371184" elapsed="0.015278"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.387530" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '3'.</msg>
-<arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.386857" elapsed="0.014545"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${remove_btn}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.401779" elapsed="0.016741"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.425870" level="INFO">Current page contains element 'id=remove-sauce-labs-bolt-t-shirt'.</msg>
-<arg>${remove_btn}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.418871" elapsed="0.007508"/>
-</kw>
-<var name="${index}">2</var>
-<var name="${product}">bolt_tshirt</var>
-<status status="PASS" start="2026-01-28T17:25:37.299691" elapsed="0.126883"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.427837" level="INFO">${add_btn} = id=add-to-cart-sauce-labs-fleece-jacket</msg>
-<var>${add_btn}</var>
-<arg>${add_to_cart_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.427189" elapsed="0.000830"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.429091" level="INFO">${remove_btn} = id=remove-sauce-labs-fleece-jacket</msg>
-<var>${remove_btn}</var>
-<arg>${remove_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.428321" elapsed="0.000999"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.430389" level="INFO">${expected_count} = 4</msg>
-<var>${expected_count}</var>
-<arg>${index}+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.429620" elapsed="0.000976"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.431367" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-fleece-jacket'.</msg>
-<arg>${add_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.430871" elapsed="0.067151"/>
-</kw>
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.498417" elapsed="0.014231"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.513671" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '4'.</msg>
-<arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.513022" elapsed="0.013844"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${remove_btn}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.527243" elapsed="0.016235"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.550101" level="INFO">Current page contains element 'id=remove-sauce-labs-fleece-jacket'.</msg>
-<arg>${remove_btn}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.543834" elapsed="0.006546"/>
-</kw>
-<var name="${index}">3</var>
-<var name="${product}">fleece_jacket</var>
-<status status="PASS" start="2026-01-28T17:25:37.426853" elapsed="0.123704"/>
-</iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.552125" level="INFO">${add_btn} = id=add-to-cart-sauce-labs-onesie</msg>
-<var>${add_btn}</var>
-<arg>${add_to_cart_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.551380" elapsed="0.000906"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.553150" level="INFO">${remove_btn} = id=remove-sauce-labs-onesie</msg>
-<var>${remove_btn}</var>
-<arg>${remove_sauce_labs_${product}_xpath}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.552548" elapsed="0.000757"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-01-28T17:25:37.554685" level="INFO">${expected_count} = 5</msg>
-<var>${expected_count}</var>
-<arg>${index}+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.553820" elapsed="0.001076"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.555688" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-onesie'.</msg>
-<arg>${add_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.555163" elapsed="0.072071"/>
-</kw>
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.627592" elapsed="0.017379"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.645963" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '5'.</msg>
-<arg>${shopping_cart_badge_xpath}</arg>
-<arg>${expected_count}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.645320" elapsed="0.014347"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${remove_btn}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.660034" elapsed="0.016776"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-28T17:25:37.683347" level="INFO">Current page contains element 'id=remove-sauce-labs-onesie'.</msg>
-<arg>${remove_btn}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.677151" elapsed="0.006470"/>
-</kw>
-<var name="${index}">4</var>
-<var name="${product}">onesie</var>
-<status status="PASS" start="2026-01-28T17:25:37.550850" elapsed="0.132956"/>
-</iter>
-<var>${index}</var>
-<var>${product}</var>
-<value>@{products}</value>
-<status status="PASS" start="2026-01-28T17:25:37.009476" elapsed="0.674475"/>
-</for>
-<kw name="Close Browser" owner="SeleniumLibrary">
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-28T17:25:37.684528" elapsed="2.167412"/>
+<status status="PASS" start="2026-01-30T14:07:25.102078" elapsed="3.105357"/>
 </kw>
-<status status="PASS" start="2026-01-28T17:25:32.676899" elapsed="7.175734"/>
+<status status="PASS" start="2026-01-30T14:07:23.259486" elapsed="4.948347"/>
 </test>
-<status status="PASS" start="2026-01-28T17:25:32.201947" elapsed="7.658019"/>
+<status status="PASS" start="2026-01-30T14:07:23.096052" elapsed="5.114597"/>
 </suite>
-<status status="PASS" start="2026-01-28T17:25:32.191794" elapsed="7.673619"/>
+<status status="PASS" start="2026-01-30T14:07:23.089463" elapsed="5.123066"/>
 </suite>
-<status status="PASS" start="2026-01-28T17:25:32.126272" elapsed="7.742997"/>
+<status status="PASS" start="2026-01-30T14:07:23.059726" elapsed="5.154523"/>
 </suite>
 <statistics>
 <total>
