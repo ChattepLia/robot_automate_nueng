@@ -38,3 +38,6 @@ ${shopping_cart_container_xpath}            id=shopping_cart_container
 ${inventory_item_name_1_xpath}           xpath=(//div[contains(@class,'inventory_item_name')])[1]
 ${item_2_img_link_xpath}                    id=item_2_img_link
 ${item_3_title_link_xpath}                  id=item_3_title_link
+
+# Product names locators
+${sauce_labs_backpack_title_xpath}    id="item_4_title_link"

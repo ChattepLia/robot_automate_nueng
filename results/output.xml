@@ -1,71 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-02-02T09:17:20.733758" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-02-02T09:42:59.257677" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Automate Nueng" source="D:\02_VS_Code_Project\robot_automate_nueng">
 <suite id="s1-s1" name="Tests" source="D:\02_VS_Code_Project\robot_automate_nueng\tests">
-<suite id="s1-s1-s1" name="Login" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\login.robot">
-<test id="s1-s1-s1-t1" name="1 Login Standard Users" line="12">
-<kw name="Login With Valid Credentials" owner="global_keywords">
+<suite id="s1-s1-s1" name="Your Cart" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\your_cart.robot">
+<test id="s1-s1-s1-t1" name="1 Ensure products correct in your cart" line="11">
+<kw name="Login With Valid Credentials" owner="global_keywords" type="SETUP">
 <kw name="Open Chrome Without Password Dialog" owner="global_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-02T09:17:21.034979" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<msg time="2026-02-02T09:42:59.485292" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_experimental_option("detach",True);add_experimental_option("prefs", {"profile.password_manager_leak_detection": False})</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-02T09:17:21.034683" elapsed="2.009448"/>
+<status status="PASS" start="2026-02-02T09:42:59.485010" elapsed="1.972089"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-02T09:17:23.044525" elapsed="0.040812"/>
+<status status="PASS" start="2026-02-02T09:43:01.457452" elapsed="0.036612"/>
 </kw>
-<status status="PASS" start="2026-02-02T09:17:21.034136" elapsed="2.051641"/>
+<status status="PASS" start="2026-02-02T09:42:59.484445" elapsed="2.009810"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${login_user_name_xpath}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-02T09:17:23.086028" elapsed="0.122473"/>
+<status status="PASS" start="2026-02-02T09:43:01.494405" elapsed="0.014098"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-02T09:17:23.209357" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<msg time="2026-02-02T09:43:01.509146" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
 <arg>${login_user_name_xpath}</arg>
 <arg>${standard_user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T09:17:23.208799" elapsed="0.111883"/>
+<status status="PASS" start="2026-02-02T09:43:01.508738" elapsed="0.057874"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-02T09:17:23.321479" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<msg time="2026-02-02T09:43:01.567364" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
 <arg>${login_password_xpath}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T09:17:23.320991" elapsed="0.057531"/>
+<status status="PASS" start="2026-02-02T09:43:01.566931" elapsed="0.047074"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-02T09:17:23.379043" level="INFO">Clicking button 'id:login-button'.</msg>
+<msg time="2026-02-02T09:43:01.614607" level="INFO">Clicking button 'id:login-button'.</msg>
 <arg>${login_button_xpath}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T09:17:23.378735" elapsed="0.072368"/>
+<status status="PASS" start="2026-02-02T09:43:01.614300" elapsed="0.059238"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${inventory_url}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2026-02-02T09:17:23.451383" elapsed="0.004115"/>
+<status status="PASS" start="2026-02-02T09:43:01.673787" elapsed="0.003528"/>
 </kw>
-<status status="PASS" start="2026-02-02T09:17:21.033707" elapsed="2.421955"/>
+<status status="PASS" start="2026-02-02T09:42:59.484084" elapsed="2.193396"/>
+</kw>
+<kw name="Add 4 Items to Cart" owner="product_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.678410" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.678182" elapsed="0.043101"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.721759" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-bike-light'.</msg>
+<arg>id=add-to-cart-sauce-labs-bike-light</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.721491" elapsed="0.041352"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.763324" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-bolt-t-shirt'.</msg>
+<arg>id=add-to-cart-sauce-labs-bolt-t-shirt</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.763047" elapsed="0.040247"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.803837" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-fleece-jacket'.</msg>
+<arg>id=add-to-cart-sauce-labs-fleece-jacket</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.803527" elapsed="0.038961"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:43:01.677849" elapsed="0.164881"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.843373" level="INFO">Clicking element 'id=shopping_cart_container'.</msg>
+<arg>${cart_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.843009" elapsed="0.054454"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${cart_url}</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.897866" elapsed="0.002432"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.902609" level="INFO">Current location is 'https://www.saucedemo.com/cart.html'.</msg>
+<arg>${cart_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.900524" elapsed="0.002236"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.911696" level="INFO">Current page contains text 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.'.</msg>
+<arg>${desc_backpack}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.903033" elapsed="0.008923"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.919376" level="INFO">Current page contains text 'A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.'.</msg>
+<arg>${desc_bike_light}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.912375" elapsed="0.007171"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.928152" level="INFO">Current page contains text 'Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.'.</msg>
+<arg>${desc_bolt_tshirt}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.919848" elapsed="0.008676"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.936029" level="INFO">Current page contains text 'It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.'.</msg>
+<arg>${desc_fleece_jacket}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.928890" elapsed="0.007387"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.944402" level="INFO">Current page contains text '$29.99'.</msg>
+<arg>${price_backpack}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.936606" elapsed="0.008041"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.952094" level="INFO">Current page contains text '$9.99'.</msg>
+<arg>${price_bike_light}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.945037" elapsed="0.007332"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.961280" level="INFO">Current page contains text '$15.99'.</msg>
+<arg>${price_bolt_tshirt}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.952771" elapsed="0.008862"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.969216" level="INFO">Current page contains text '$49.99'.</msg>
+<arg>${price_fleece_jacket}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.962032" elapsed="0.007356"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-02T09:43:01.969973" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '4'.</msg>
+<arg>${shopping_cart_badge_xpath}</arg>
+<arg>4</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-02-02T09:43:01.969673" elapsed="0.014487"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-02T09:17:23.456025" elapsed="2.095121"/>
+<status status="PASS" start="2026-02-02T09:43:01.984595" elapsed="2.088900"/>
 </kw>
-<status status="PASS" start="2026-02-02T09:17:21.031300" elapsed="4.520123"/>
+<status status="PASS" start="2026-02-02T09:42:59.481904" elapsed="4.591873"/>
 </test>
-<doc>Test cases for login page</doc>
-<status status="PASS" start="2026-02-02T09:17:20.795638" elapsed="4.758891"/>
+<status status="PASS" start="2026-02-02T09:42:59.298061" elapsed="4.778969"/>
 </suite>
-<status status="PASS" start="2026-02-02T09:17:20.792658" elapsed="4.763860"/>
+<status status="PASS" start="2026-02-02T09:42:59.289161" elapsed="4.789803"/>
 </suite>
-<status status="PASS" start="2026-02-02T09:17:20.738137" elapsed="4.820116"/>
+<status status="PASS" start="2026-02-02T09:42:59.262218" elapsed="4.820060"/>
 </suite>
 <statistics>
 <total>
@@ -76,7 +175,7 @@
 <suite>
 <stat name="Robot Automate Nueng" id="s1" pass="1" fail="0" skip="0">Robot Automate Nueng</stat>
 <stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Robot Automate Nueng.Tests</stat>
-<stat name="Login" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Automate Nueng.Tests.Login</stat>
+<stat name="Your Cart" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Automate Nueng.Tests.Your Cart</stat>
 </suite>
 </statistics>
 <errors>
