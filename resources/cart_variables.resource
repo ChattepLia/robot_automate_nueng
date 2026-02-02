@@ -1,5 +1,6 @@
 *** Variables ***
 ${cart_icon}    id=shopping_cart_container
+${cart_badge}    css=#shopping_cart_container .shopping_cart_badge
 
 # Product descriptions
 ${desc_backpack}    carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
@@ -10,3 +11,8 @@ ${price_backpack}    $29.99
 ${price_bike_light}    $9.99
 ${price_bolt_tshirt}    $15.99
 ${price_fleece_jacket}    $49.99
+
+# Button locators
+${remove_backpack_xpath}         id=remove-sauce-labs-backpack
+${continue_shopping_button_xpath}    id=continue-shopping
+${checkout_button_xpath}            id=checkout
