@@ -1,7 +1,3 @@
-*** Settings ***
-Library   SeleniumLibrary
-Resource   ${CURDIR}/../resources/global_variables.resource
-
 *** Variables ***
 #Users login
 ${standard_user}    standard_user
