@@ -1,107 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-13T16:07:40.873869" rpa="false" schemaversion="5">
-<suite id="s1" name="Product" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\product.robot">
-<test id="s1-t1" name="4 Sorting by A to Z" line="76">
-<kw name="Login With Valid Credentials" owner="login_keywords">
-<kw name="Open Chrome Without Password Dialog" owner="browser">
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-02-03T10:05:41.292036" rpa="false" schemaversion="5">
+<suite id="s1" name="Your Cart" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\your_cart.robot">
+<test id="s1-t1" name="2 Ensure products correct in your cart when add product from detail page" line="31">
+<kw name="Login With Valid Credentials" owner="global_keywords" type="SETUP">
+<kw name="Open Chrome Without Password Dialog" owner="global_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-03T10:05:41.685210" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_experimental_option("detach",True);add_experimental_option("prefs", {"profile.password_manager_leak_detection": False})</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.055868" elapsed="0.000096"/>
+<status status="PASS" start="2026-02-03T10:05:41.684809" elapsed="1.684362"/>
 </kw>
-<status status="PASS" start="2026-01-13T16:07:41.055405" elapsed="0.000636"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-03T10:05:43.369510" elapsed="0.034337"/>
+</kw>
+<status status="PASS" start="2026-02-03T10:05:41.683854" elapsed="1.720210"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_user_name_xpath}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-03T10:05:43.404282" elapsed="0.025259"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>id:user-name</arg>
+<msg time="2026-02-03T10:05:43.430227" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${login_user_name_xpath}</arg>
 <arg>${standard_user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.056122" elapsed="0.000181"/>
+<status status="PASS" start="2026-02-03T10:05:43.429842" elapsed="0.114914"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>id:password</arg>
+<msg time="2026-02-03T10:05:43.545401" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>${login_password_xpath}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.056385" elapsed="0.000072"/>
+<status status="PASS" start="2026-02-03T10:05:43.545032" elapsed="0.083636"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<arg>id:login-button</arg>
+<msg time="2026-02-03T10:05:43.629287" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${login_button_xpath}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.056537" elapsed="0.000059"/>
+<status status="PASS" start="2026-02-03T10:05:43.628943" elapsed="0.109872"/>
 </kw>
-<status status="PASS" start="2026-01-13T16:07:41.055147" elapsed="0.001487"/>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${inventory_url}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-02-03T10:05:43.739096" elapsed="0.007595"/>
 </kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<arg>css=.product_sort_container</arg>
-<arg>az</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.056760" elapsed="0.000079"/>
+<status status="PASS" start="2026-02-03T10:05:41.683349" elapsed="2.063521"/>
 </kw>
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<var>${elements}</var>
-<arg>xpath=//div[@class='inventory_item_name']</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.056961" elapsed="0.000070"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-03T10:05:43.747435" level="INFO">Clicking element 'id="item_4_title_link"'.</msg>
+<msg time="2026-02-03T10:05:44.035423" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-03T10:05:44.035681" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff7beeea535
+	0x7ff7beeea590
+	0x7ff7bec910bd
+	0x7ff7bec99031
+	0x7ff7bec9c164
+	0x7ff7bec9c22f
+	0x7ff7becebc0e
+	0x7ff7becec79c
+	0x7ff7bed3d3d7
+	0x7ff7bed39ef5
+	0x7ff7becdcc9c
+	0x7ff7becddbe3
+	0x7ff7bf1c7b60
+	0x7ff7bf1c1f5d
+	0x7ff7bf1e311a
+	0x7ff7bef060a5
+	0x7ff7bef0e73c
+	0x7ff7beef3844
+	0x7ff7beef39f6
+	0x7ff7beed9a07
+	0x7ffd21757374
+	0x7ffd21a5cc91
+</msg>
+<arg>${sauce_labs_backpack_title_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-02-03T10:05:43.747115" elapsed="0.293493">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff7beeea535
+	0x7ff7beeea590
+	0x7ff7bec910bd
+	0x7ff7bec99031
+	0x7ff7bec9c164
+	0x7ff7bec9c22f
+	0x7ff7becebc0e
+	0x7ff7becec79c
+	0x7ff7bed3d3d7
+	0x7ff7bed39ef5
+	0x7ff7becdcc9c
+	0x7ff7becddbe3
+	0x7ff7bf1c7b60
+	0x7ff7bf1c1f5d
+	0x7ff7bf1e311a
+	0x7ff7bef060a5
+	0x7ff7bef0e73c
+	0x7ff7beef3844
+	0x7ff7beef39f6
+	0x7ff7beed9a07
+	0x7ffd21757374
+	0x7ffd21a5cc91
+</status>
 </kw>
-<kw name="Create List" owner="BuiltIn">
-<var>@{names}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.057144" elapsed="0.000128"/>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${sauce_labs_backpack_url}</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.040927" elapsed="0.000055"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Get Text" owner="SeleniumLibrary">
-<var>${name}</var>
-<arg>${el}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.057518" elapsed="0.000042"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${add_to_cart_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.041125" elapsed="0.000036"/>
 </kw>
-<kw name="Append To List" owner="Collections">
-<arg>@{names}</arg>
-<arg>${name}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.057632" elapsed="0.000042"/>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${shopping_cart_badge_xpath}</arg>
+<arg>1</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.041310" elapsed="0.000035"/>
 </kw>
-<var name="${el}"/>
-<status status="PASS" start="2026-01-13T16:07:41.057449" elapsed="0.000256"/>
-</iter>
-<var>${el}</var>
-<value>@{elements}</value>
-<status status="PASS" start="2026-01-13T16:07:41.057364" elapsed="0.000377"/>
-</for>
-<kw name="Create List" owner="BuiltIn">
-<var>@{expected}</var>
-<arg>Sauce Labs Backpack</arg>
-<arg>Sauce Labs Bike Light</arg>
-<arg>Sauce Labs Bolt T-Shirt</arg>
-<arg>Sauce Labs Fleece Jacket</arg>
-<arg>Sauce Labs Onesie</arg>
-<doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.057861" elapsed="0.000138"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${cart_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.041484" elapsed="0.000035"/>
 </kw>
-<kw name="Lists Should Be Equal" owner="Collections">
-<arg>@{names}</arg>
-<arg>@{expected}</arg>
-<doc>Fails if given lists are unequal.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.058119" elapsed="0.000046"/>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${cart_url}</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.041636" elapsed="0.000031"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>${cart_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.041785" elapsed="0.000031"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>${desc_backpack}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.041931" elapsed="0.000033"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>${price_backpack}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.042081" elapsed="0.000029"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${shopping_cart_badge_xpath}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-02-03T10:05:44.042225" elapsed="0.000030"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2026-01-13T16:07:41.058269" elapsed="0.000032"/>
+<status status="PASS" start="2026-02-03T10:05:44.042558" elapsed="2.178569"/>
 </kw>
-<status status="PASS" start="2026-01-13T16:07:41.054526" elapsed="0.003887"/>
+<status status="FAIL" start="2026-02-03T10:05:41.681750" elapsed="4.539534">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff7beeea535
+	0x7ff7beeea590
+	0x7ff7bec910bd
+	0x7ff7bec99031
+	0x7ff7bec9c164
+	0x7ff7bec9c22f
+	0x7ff7becebc0e
+	0x7ff7becec79c
+	0x7ff7bed3d3d7
+	0x7ff7bed39ef5
+	0x7ff7becdcc9c
+	0x7ff7becddbe3
+	0x7ff7bf1c7b60
+	0x7ff7bf1c1f5d
+	0x7ff7bf1e311a
+	0x7ff7bef060a5
+	0x7ff7bef0e73c
+	0x7ff7beef3844
+	0x7ff7beef39f6
+	0x7ff7beed9a07
+	0x7ffd21757374
+	0x7ffd21a5cc91
+</status>
 </test>
-<status status="PASS" start="2026-01-13T16:07:40.874914" elapsed="0.183938"/>
+<status status="FAIL" start="2026-02-03T10:05:41.293890" elapsed="4.928290"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Product" id="s1" pass="1" fail="0" skip="0">Product</stat>
+<stat name="Your Cart" id="s1" pass="0" fail="1" skip="0">Your Cart</stat>
 </suite>
 </statistics>
 <errors>
