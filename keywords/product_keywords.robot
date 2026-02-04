@@ -24,12 +24,14 @@ Add 5 Items to Cart
     Click Button    id=add-to-cart-sauce-labs-bolt-t-shirt
     Click Button    id=add-to-cart-sauce-labs-fleece-jacket    
     Click Button    id=add-to-cart-sauce-labs-onesie
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    5    timeout=5s
 
 Add 4 Items to Cart
     Click Button    id=add-to-cart-sauce-labs-backpack
     Click Button    id=add-to-cart-sauce-labs-bike-light
     Click Button    id=add-to-cart-sauce-labs-bolt-t-shirt
     Click Button    id=add-to-cart-sauce-labs-fleece-jacket
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
 
 Get Product List    
     ${items_list}=    Create List
