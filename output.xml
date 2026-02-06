@@ -1,209 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-02-03T10:05:41.292036" rpa="false" schemaversion="5">
-<suite id="s1" name="Your Cart" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\your_cart.robot">
-<test id="s1-t1" name="2 Ensure products correct in your cart when add product from detail page" line="31">
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-02-06T13:46:58.239434" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkout Order" source="D:\02_VS_Code_Project\robot_automate_nueng\tests\checkout_order.robot">
+<test id="s1-t1" name="1 Verify one product on checkout order page" line="13">
 <kw name="Login With Valid Credentials" owner="global_keywords" type="SETUP">
 <kw name="Open Chrome Without Password Dialog" owner="global_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-03T10:05:41.685210" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<msg time="2026-02-06T13:46:58.651642" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_experimental_option("detach",True);add_experimental_option("prefs", {"profile.password_manager_leak_detection": False})</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-03T10:05:41.684809" elapsed="1.684362"/>
+<status status="PASS" start="2026-02-06T13:46:58.651209" elapsed="2.394244"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-03T10:05:43.369510" elapsed="0.034337"/>
+<status status="PASS" start="2026-02-06T13:47:01.045904" elapsed="0.037826"/>
 </kw>
-<status status="PASS" start="2026-02-03T10:05:41.683854" elapsed="1.720210"/>
+<status status="PASS" start="2026-02-06T13:46:58.649835" elapsed="2.434168"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${login_user_name_xpath}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-03T10:05:43.404282" elapsed="0.025259"/>
+<status status="PASS" start="2026-02-06T13:47:01.084283" elapsed="0.139128"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-03T10:05:43.430227" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<msg time="2026-02-06T13:47:01.224110" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
 <arg>${login_user_name_xpath}</arg>
 <arg>${standard_user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-03T10:05:43.429842" elapsed="0.114914"/>
+<status status="PASS" start="2026-02-06T13:47:01.223726" elapsed="0.110446"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-03T10:05:43.545401" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<msg time="2026-02-06T13:47:01.334935" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
 <arg>${login_password_xpath}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-03T10:05:43.545032" elapsed="0.083636"/>
+<status status="PASS" start="2026-02-06T13:47:01.334460" elapsed="0.076819"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-03T10:05:43.629287" level="INFO">Clicking button 'id:login-button'.</msg>
+<msg time="2026-02-06T13:47:01.412106" level="INFO">Clicking button 'id:login-button'.</msg>
 <arg>${login_button_xpath}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-03T10:05:43.628943" elapsed="0.109872"/>
+<status status="PASS" start="2026-02-06T13:47:01.411589" elapsed="0.121035"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${inventory_url}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2026-02-03T10:05:43.739096" elapsed="0.007595"/>
+<status status="PASS" start="2026-02-06T13:47:01.532943" elapsed="0.019892"/>
 </kw>
-<status status="PASS" start="2026-02-03T10:05:41.683349" elapsed="2.063521"/>
+<status status="PASS" start="2026-02-06T13:46:58.649388" elapsed="2.903624"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-03T10:05:43.747435" level="INFO">Clicking element 'id="item_4_title_link"'.</msg>
-<msg time="2026-02-03T10:05:44.035423" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-03T10:05:44.035681" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
-  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-Symbols not available. Dumping unresolved backtrace:
-	0x7ff7beeea535
-	0x7ff7beeea590
-	0x7ff7bec910bd
-	0x7ff7bec99031
-	0x7ff7bec9c164
-	0x7ff7bec9c22f
-	0x7ff7becebc0e
-	0x7ff7becec79c
-	0x7ff7bed3d3d7
-	0x7ff7bed39ef5
-	0x7ff7becdcc9c
-	0x7ff7becddbe3
-	0x7ff7bf1c7b60
-	0x7ff7bf1c1f5d
-	0x7ff7bf1e311a
-	0x7ff7bef060a5
-	0x7ff7bef0e73c
-	0x7ff7beef3844
-	0x7ff7beef39f6
-	0x7ff7beed9a07
-	0x7ffd21757374
-	0x7ffd21a5cc91
-</msg>
-<arg>${sauce_labs_backpack_title_xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2026-02-03T10:05:43.747115" elapsed="0.293493">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
-  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-Symbols not available. Dumping unresolved backtrace:
-	0x7ff7beeea535
-	0x7ff7beeea590
-	0x7ff7bec910bd
-	0x7ff7bec99031
-	0x7ff7bec9c164
-	0x7ff7bec9c22f
-	0x7ff7becebc0e
-	0x7ff7becec79c
-	0x7ff7bed3d3d7
-	0x7ff7bed39ef5
-	0x7ff7becdcc9c
-	0x7ff7becddbe3
-	0x7ff7bf1c7b60
-	0x7ff7bf1c1f5d
-	0x7ff7bf1e311a
-	0x7ff7bef060a5
-	0x7ff7bef0e73c
-	0x7ff7beef3844
-	0x7ff7beef39f6
-	0x7ff7beed9a07
-	0x7ffd21757374
-	0x7ffd21a5cc91
-</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${sauce_labs_backpack_url}</arg>
-<arg>5s</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.040927" elapsed="0.000055"/>
-</kw>
+<kw name="Add tsirt red to cart from list page" owner="product_keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<arg>${add_to_cart_xpath}</arg>
+<msg time="2026-02-06T13:47:01.554002" level="INFO">Clicking button 'id=add-to-cart-test.allthethings()-t-shirt-(red)'.</msg>
+<arg>${add_to_cart_test_allthethings_tshirt_red_xpath}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.041125" elapsed="0.000036"/>
+<status status="PASS" start="2026-02-06T13:47:01.553720" elapsed="0.084812"/>
 </kw>
 <kw name="Wait Until Element Contains" owner="SeleniumLibrary">
 <arg>${shopping_cart_badge_xpath}</arg>
 <arg>1</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.041310" elapsed="0.000035"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${cart_icon}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.041484" elapsed="0.000035"/>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${cart_url}</arg>
-<arg>5s</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.041636" elapsed="0.000031"/>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<arg>${cart_url}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.041785" elapsed="0.000031"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<arg>${desc_backpack}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.041931" elapsed="0.000033"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<arg>${price_backpack}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.042081" elapsed="0.000029"/>
+<status status="PASS" start="2026-02-06T13:47:01.638813" elapsed="0.025878"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:01.665352" level="INFO">Verifying element 'css=#shopping_cart_container .shopping_cart_badge' contains exact text '1'.</msg>
 <arg>${shopping_cart_badge_xpath}</arg>
 <arg>1</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2026-02-03T10:05:44.042225" elapsed="0.000030"/>
+<status status="PASS" start="2026-02-06T13:47:01.664980" elapsed="0.014882"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${remove_sauce_lab_all_things_tshirt_red_xpath}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T13:47:01.680144" elapsed="0.017284"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:01.704111" level="INFO">Current page contains element 'id=remove-test.allthethings()-t-shirt-(red)'.</msg>
+<arg>${remove_sauce_lab_all_things_tshirt_red_xpath}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-06T13:47:01.697743" elapsed="0.006504"/>
+</kw>
+<status status="PASS" start="2026-02-06T13:47:01.553373" elapsed="0.151006"/>
+</kw>
+<kw name="Go to Cart Page" owner="cart_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:01.705266" level="INFO">Clicking element 'id=shopping_cart_container'.</msg>
+<arg>${cart_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T13:47:01.705009" elapsed="0.067248"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${cart_url}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-02-06T13:47:01.772536" elapsed="0.004204"/>
+</kw>
+<status status="PASS" start="2026-02-06T13:47:01.704672" elapsed="0.072225"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:01.777687" level="INFO">Clicking button 'id=checkout'.</msg>
+<arg>${checkout_button_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T13:47:01.777263" elapsed="0.079264"/>
+</kw>
+<kw name="Input valid info and go to checkout order page" owner="checkout_info_keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:01.857607" level="INFO">Typing text 'QA_firstname' into text field 'id=first-name'.</msg>
+<arg>${first_name_input}</arg>
+<arg>QA_firstname</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T13:47:01.857300" elapsed="0.096841"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:01.954789" level="INFO">Typing text 'QA_Lastname' into text field 'id=last-name'.</msg>
+<arg>${last_name_input}</arg>
+<arg>QA_Lastname</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T13:47:01.954446" elapsed="0.087238"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:02.042327" level="INFO">Typing text '51000' into text field 'id=postal-code'.</msg>
+<arg>${postal_code_input}</arg>
+<arg>51000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T13:47:02.041982" elapsed="0.088618"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:02.131241" level="INFO">Clicking button 'id=continue'.</msg>
+<arg>${continue_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T13:47:02.130891" elapsed="0.077464"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${checkout_order_url}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-02-06T13:47:02.208662" elapsed="0.006260"/>
+</kw>
+<status status="PASS" start="2026-02-06T13:47:01.856891" elapsed="0.358186"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:02.229132" level="INFO">Current page contains text 'Checkout: Overview'.</msg>
+<arg>Checkout: Overview</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-06T13:47:02.215295" elapsed="0.013960"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:02.230290" level="INFO">Verifying element 'xpath=(//div[@class='cart_item']//div[@class='inventory_item_name'])[1]' contains exact text 'Test.allTheThings() T-Shirt (Red)'.</msg>
+<arg>xpath=(//div[@class='cart_item']//div[@class='inventory_item_name'])[1]</arg>
+<arg>${name_test_allthethings_tshirt_red}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-02-06T13:47:02.229681" elapsed="0.021354"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:02.251711" level="INFO">Verifying element 'xpath=(//div[@class='cart_item']//div[@class='inventory_item_desc'])[1]' contains exact text 'This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.'.</msg>
+<arg>xpath=(//div[@class='cart_item']//div[@class='inventory_item_desc'])[1]</arg>
+<arg>${desc_test_allthethings_tshirt_red}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-02-06T13:47:02.251354" elapsed="0.018480"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-06T13:47:02.270493" level="INFO">Verifying element 'xpath=(//div[@class='cart_item']//div[@class='inventory_item_price'])[1]' contains exact text '$15.99'.</msg>
+<arg>xpath=(//div[@class='cart_item']//div[@class='inventory_item_price'])[1]</arg>
+<arg>${price_test_allthethings_tshirt_red}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-02-06T13:47:02.270141" elapsed="0.017939"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-03T10:05:44.042558" elapsed="2.178569"/>
+<status status="PASS" start="2026-02-06T13:47:02.288485" elapsed="2.188718"/>
 </kw>
-<status status="FAIL" start="2026-02-03T10:05:41.681750" elapsed="4.539534">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
-  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-Symbols not available. Dumping unresolved backtrace:
-	0x7ff7beeea535
-	0x7ff7beeea590
-	0x7ff7bec910bd
-	0x7ff7bec99031
-	0x7ff7bec9c164
-	0x7ff7bec9c22f
-	0x7ff7becebc0e
-	0x7ff7becec79c
-	0x7ff7bed3d3d7
-	0x7ff7bed39ef5
-	0x7ff7becdcc9c
-	0x7ff7becddbe3
-	0x7ff7bf1c7b60
-	0x7ff7bf1c1f5d
-	0x7ff7bf1e311a
-	0x7ff7bef060a5
-	0x7ff7bef0e73c
-	0x7ff7beef3844
-	0x7ff7beef39f6
-	0x7ff7beed9a07
-	0x7ffd21757374
-	0x7ffd21a5cc91
-</status>
+<status status="PASS" start="2026-02-06T13:46:58.648321" elapsed="5.829095"/>
 </test>
-<status status="FAIL" start="2026-02-03T10:05:41.293890" elapsed="4.928290"/>
+<status status="PASS" start="2026-02-06T13:46:58.241512" elapsed="6.237039"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Your Cart" id="s1" pass="0" fail="1" skip="0">Your Cart</stat>
+<stat name="Checkout Order" id="s1" pass="1" fail="0" skip="0">Checkout Order</stat>
 </suite>
 </statistics>
 <errors>
