@@ -1,12 +1,12 @@
 *** Variables ***
 # Text box locators
-${first_name_input}    id=first-name
-${last_name_input}     id=last-name
-${postal_code_input}   id=postal-code
+${input_first_name}    id=first-name
+${input_last_name}     id=last-name
+${input_postal_code}   id=postal-code
 
 # Button locators
-${continue_button}     id=continue
-${cancel_button}         id=cancel
+${button_continue}     id=continue
+${button_cancel}         id=cancel
 
 # Error message 
-${checkout_error_message}    css=.error-message-container.error
+${message_checkout_error}    css=.error-message-container.error

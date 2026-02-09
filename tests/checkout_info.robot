@@ -26,50 +26,50 @@ Test Teardown    Close Browser
     Add 4 Items to Cart
     Go to Cart Page
     Go to checkout info page
-    Click Button    ${continue_button}
-    Wait Until Element Is Visible    ${checkout_error_message}    timeout=5s
+    Click Button    ${button_continue}
+    Wait Until Element Is Visible    ${message_checkout_error}    timeout=5s
 #Assertions
-    Element Should Contain    ${checkout_error_message}    Error: First Name is required
+    Element Should Contain    ${message_checkout_error}    Error: First Name is required
 
 3 Verify empty first name
 # Initialize steps
     Add 4 Items to Cart
     Go to Cart Page
     Go to checkout info page
-    Input Text    ${last_name_input}     QA_Lastname
-    Input Text    ${postal_code_input}   51000
-    Click Button    ${continue_button} 
-    Wait Until Element Is Visible    ${checkout_error_message}    timeout=5s  
-    Element Should Contain    ${checkout_error_message}    Error: First Name is required
+    Input Text    ${input_last_name}     QA_Lastname
+    Input Text    ${input_postal_code}   51000
+    Click Button    ${button_continue} 
+    Wait Until Element Is Visible    ${message_checkout_error}    timeout=5s  
+    Element Should Contain    ${message_checkout_error}    Error: First Name is required
 
 4 Verify empty last name
 # Initialize steps
     Add 4 Items to Cart
     Go to Cart Page
     Go to checkout info page
-    Input Text    ${first_name_input}    QA_firstname
-    Input Text    ${postal_code_input}   51000
-    Click Button    ${continue_button} 
-    Wait Until Element Is Visible    ${checkout_error_message}    timeout=5s  
-    Element Should Contain    ${checkout_error_message}    Error: Last Name is required
+    Input Text    ${input_first_name}    QA_firstname
+    Input Text    ${input_postal_code}   51000
+    Click Button    ${button_continue} 
+    Wait Until Element Is Visible    ${message_checkout_error}    timeout=5s  
+    Element Should Contain    ${message_checkout_error}    Error: Last Name is required
 
 5 Verify empty postal code
 # Initialize steps
     Add 4 Items to Cart
     Go to Cart Page
     Go to checkout info page
-    Input Text    ${first_name_input}    QA_firstname
-    Input Text    ${last_name_input}     QA_Lastname
-    Click Button    ${continue_button} 
-    Wait Until Element Is Visible    ${checkout_error_message}    timeout=5s
-    Element Should Contain    ${checkout_error_message}    Error: Postal Code is required
+    Input Text    ${input_first_name}    QA_firstname
+    Input Text    ${input_last_name}     QA_Lastname
+    Click Button    ${button_continue} 
+    Wait Until Element Is Visible    ${message_checkout_error}    timeout=5s
+    Element Should Contain    ${message_checkout_error}    Error: Postal Code is required
 
 6 Verify when cancel checkout
 # Initialize steps
     Add 4 Items to Cart
     Go to Cart Page
     Go to checkout info page
-    Click Button    ${cancel_button}
+    Click Button    ${button_cancel}
     Wait Until Location Is    ${url_cart}    timeout=5s
     Location Should Be    ${url_cart}
 

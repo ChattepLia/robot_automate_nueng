@@ -54,7 +54,7 @@ Test Teardown    Close Browser
     Page Should Contain    ${payment_info_value}
     Page Should Contain    ${shipping_info_value}
 
-4 Verify multiple products on checkout order page
+4 Verify finich order process
     # Initialize steps
     Add 6 Items to Cart
     Go to Cart Page
@@ -68,3 +68,17 @@ Test Teardown    Close Browser
     Page Should Contain    Thank you for your order!
     Page Should Contain Element    xpath=//img[@src="${checkout_image_src}"]
     Element Should Not Be Visible    ${cart_badge}
+
+5 Verify cancel order process
+    # Initialize steps
+    Add tsirt red to cart from list page
+    Go to Cart Page
+    Click Button   ${checkout_button_xpath}
+    Input valid info and go to checkout order page
+    Page Should Contain    Checkout: Overview
+    Click Element  ${button_cancel}
+    Wait Until Location Is    ${url_inventory}    5s
+    # Assertions
+    Location Should Be    ${url_inventory}
+    Page Should Contain    Swag Labs
+    Element Should Be Visible    ${cart_badge}

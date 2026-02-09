@@ -16,9 +16,9 @@ Test Teardown    Close Browser
     # Initialize steps
     Add 4 Items to Cart
     Click Element    ${cart_icon}
-    Wait Until Location Is  ${cart_url}    5s
+    Wait Until Location Is  ${url_cart}    5s
     # Assertions
-    Location Should Be   ${cart_url}
+    Location Should Be   ${url_cart}
     Page Should Contain  ${desc_backpack}
     Page Should Contain  ${desc_bike_light}
     Page Should Contain  ${desc_bolt_tshirt}
@@ -36,9 +36,9 @@ Test Teardown    Close Browser
     Click Button    ${add_to_cart_xpath}
     Wait Until Element Contains   ${shopping_cart_badge_xpath}    1    timeout=5s
     Click Element    ${cart_icon}
-    Wait Until Location Is  ${cart_url}    5s
+    Wait Until Location Is  ${url_cart}    5s
     # Assertions
-    Location Should Be   ${cart_url}
+    Location Should Be   ${url_cart}
     Page Should Contain  ${desc_backpack}
     Page Should Contain  ${price_backpack}
     Element Text Should Be    ${shopping_cart_badge_xpath}    1
@@ -48,7 +48,7 @@ Test Teardown    Close Browser
     Add 4 Items to Cart
     Wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
     Click Element    ${cart_icon}
-    Wait Until Location Is  ${cart_url}    5s
+    Wait Until Location Is  ${url_cart}    5s
     Click Button   ${remove_sauce_labs_backpack_xpath}
     Wait Until Element Contains   ${shopping_cart_badge_xpath}    3    timeout=5s
     Wait Until Element Is Not Visible   ${remove_sauce_labs_backpack_xpath}    timeout=5s
@@ -61,7 +61,7 @@ Test Teardown    Close Browser
     Add 4 Items to Cart
     Wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
     Click Element    ${cart_icon}
-    Wait Until Location Is  ${cart_url}    5s
+    Wait Until Location Is  ${url_cart}    5s
     Remove all products from cart
     # Assertions
     Page Should Not Contain  ${desc_backpack}
@@ -73,19 +73,19 @@ Test Teardown    Close Browser
     Add 4 Items to Cart
     Wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
     Click Element    ${cart_icon}
-    Wait Until Location Is  ${cart_url}    5s
+    Wait Until Location Is  ${url_cart}    5s
     Click Button    ${continue_shopping_button_xpath}
-    Wait Until Location Is    ${inventory_url}    5s
+    Wait Until Location Is    ${url_inventory}    5s
     # Assertions
-    Location Should Be   ${inventory_url}
+    Location Should Be   ${url_inventory}
 
 6 Click checkout button from cart page
     # Initialize steps
     Add 4 Items to Cart
     Wait Until Element Contains   ${shopping_cart_badge_xpath}    4    timeout=5s
     Click Element    ${cart_icon}
-    Wait Until Location Is  ${cart_url}    5s
+    Wait Until Location Is  ${url_cart}    5s
     Click Button    ${checkout_button_xpath}
-    Wait Until Location Is    ${checkout_info_url}    5s
+    Wait Until Location Is    ${url_checkout_info}    5s
     # Assertions
-    Location Should Be   ${checkout_info_url}
+    Location Should Be   ${url_checkout_info}
