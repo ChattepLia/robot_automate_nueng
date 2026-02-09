@@ -19,3 +19,4 @@ Test Teardown    Close Browser
     Page Should Contain    ${name_tshirt_red}
     Page Should Contain    ${desc_tshirt_red}
     Page Should Contain    ${price_tshirt_red}
+    1
