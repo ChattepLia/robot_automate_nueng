@@ -86,6 +86,6 @@ Test Teardown    Close Browser
     Click Element    ${cart_icon}
     Wait Until Location Is  ${cart_url}    5s
     Click Button    ${checkout_button_xpath}
-    Wait Until Location Is    ${checkout_step_one_url}    5s
+    Wait Until Location Is    ${checkout_info_url}    5s
     # Assertions
-    Location Should Be   ${checkout_step_one_url}
+    Location Should Be   ${checkout_info_url}

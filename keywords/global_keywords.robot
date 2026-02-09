@@ -15,4 +15,4 @@ Login With Valid Credentials
     Input Text    ${login_user_name_xpath}    ${standard_user}
     Input Text    ${login_password_xpath}    ${password}
     Click Button    ${login_button_xpath}
-    Wait Until Location Is    ${inventory_url}    timeout=5s
+    Wait Until Location Is    ${url_inventory}    timeout=5s

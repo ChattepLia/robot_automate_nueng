@@ -17,4 +17,5 @@ Remove all products from cart
 
 Go to Cart Page
     Click Element    ${cart_icon}
-    Wait Until Location Is    ${cart_url}    timeout=5s
+    Wait Until Location Is    ${url_cart}    timeout=5s
+
