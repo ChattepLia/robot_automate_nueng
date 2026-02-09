@@ -8,5 +8,5 @@ ${postal_code_input}   id=postal-code
 ${continue_button}     id=continue
 ${cancel_button}         id=cancel
 
-# Error message 
+# Error message locators
 ${checkout_error_message}    css=.error-message-container.error

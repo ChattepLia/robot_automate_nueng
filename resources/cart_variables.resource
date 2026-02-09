@@ -2,7 +2,7 @@
 ${cart_icon}    id=shopping_cart_container
 ${cart_badge}    css=#shopping_cart_container .shopping_cart_badge
 
-# Product descriptions
+# Product descriptions locators
 ${desc_backpack}    carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
 ${desc_bike_light}    A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
 ${desc_bolt_tshirt}    Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
