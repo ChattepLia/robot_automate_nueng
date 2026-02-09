@@ -20,6 +20,7 @@ ${desc_bike_light}    A red light isn't the desired state in testing but it sure
 ${desc_bolt_tshirt}    Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
 ${desc_fleece_jacket}    It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
 ${desc_tshirt_red}    This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+${desc_onesie}    Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
 
 # Product price
 ${price_backpack}    $29.99
@@ -27,3 +28,4 @@ ${price_bike_light}    $9.99
 ${price_bolt_tshirt}    $15.99
 ${price_fleece_jacket}    $49.99
 ${price_tshirt_red}    $15.99
+${price_onesie}    $7.99

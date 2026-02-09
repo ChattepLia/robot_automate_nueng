@@ -18,6 +18,15 @@ Add tsirt red to cart from list page
     Wait Until Element Is Visible    ${remove_sauce_lab_all_things_tshirt_red_xpath}    timeout=5s
     Page Should Contain Element    ${remove_sauce_lab_all_things_tshirt_red_xpath}
 
+Add 6 Items to Cart
+    Click Button    id=add-to-cart-sauce-labs-backpack
+    Click Button    id=add-to-cart-sauce-labs-bike-light
+    Click Button    id=add-to-cart-sauce-labs-bolt-t-shirt
+    Click Button    id=add-to-cart-sauce-labs-fleece-jacket    
+    Click Button    id=add-to-cart-sauce-labs-onesie
+    Click Button    id=add-to-cart-test.allthethings()-t-shirt-(red)
+    Wait Until Element Contains   ${shopping_cart_badge_xpath}    6    timeout=5s
+
 Add 5 Items to Cart
     Click Button    id=add-to-cart-sauce-labs-backpack
     Click Button    id=add-to-cart-sauce-labs-bike-light
