@@ -12,6 +12,7 @@ ${url_checkout_complete}    https://www.saucedemo.com/checkout-complete.html
 
 # Product names
 ${name_tshirt_red}    Test.allTheThings() T-Shirt (Red)
+${title_tshirt_red}    id=item_3_title_link
 
 # Product descriptions
 ${desc_backpack}    carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.

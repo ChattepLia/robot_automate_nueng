@@ -1,0 +1,2 @@
+*** Variables ***
+# Product name locators
