@@ -11,8 +11,8 @@ Go to checkout info page
     Wait Until Location Is    ${url_checkout_info}    timeout=5s
 
 Input valid info and go to checkout order page
-    Input Text    ${first_name_input}    QA_firstname
-    Input Text    ${last_name_input}     QA_Lastname
-    Input Text    ${postal_code_input}   51000
-    Click Button    ${continue_button}
+    Input Text    ${input_first_name}    QA_firstname
+    Input Text    ${input_last_name}     QA_Lastname
+    Input Text    ${input_postal_code}   51000
+    Click Button    ${button_continue}
     Wait Until Location Is    ${url_checkout_order}    timeout=5s

@@ -131,7 +131,7 @@ Test Teardown    Close Browser
 12 Remove Product from Cart at Cart Page
     Add tsirt red to cart from list page
     Click Element    ${shopping_cart_container_xpath}
-    Wait Until Location Is    ${cart_url}    timeout=5s
+    Wait Until Location Is    ${url_cart}    timeout=5s
     Click Element    ${item_3_title_link_xpath}
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
     Click Button    ${remove_xpath}
@@ -144,5 +144,5 @@ Test Teardown    Close Browser
     Click Element    ${test_allthethings_tshirt_red_name_xpath} 
     Wait Until Location Is    ${test_allthethings_tshirt_red_url}    timeout=5s
     Click Element    ${back_to_products_xpath}
-    Wait Until Location Is    ${inventory_url}    timeout=5s
-    Location Should Be   ${inventory_url}
+    Wait Until Location Is    ${url_inventory}    timeout=5s
+    Location Should Be   ${url_inventory}
