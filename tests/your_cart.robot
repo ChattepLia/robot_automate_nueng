@@ -19,14 +19,9 @@ Test Teardown    Close Browser
     Wait Until Location Is  ${url_cart}    5s
     # Assertions
     Location Should Be   ${url_cart}
-    Page Should Contain  ${desc_backpack}
-    Page Should Contain  ${desc_bike_light}
-    Page Should Contain  ${desc_bolt_tshirt}
-    Page Should Contain  ${desc_fleece_jacket}
-    Page Should Contain  ${price_backpack}
-    Page Should Contain  ${price_bike_light}
-    Page Should Contain  ${price_bolt_tshirt}
-    Page Should Contain  ${price_fleece_jacket}
+    FOR    ${expected_text}    IN    ${desc_backpack}    ${desc_bike_light}    ${desc_bolt_tshirt}    ${desc_fleece_jacket}    ${price_backpack}    ${price_bike_light}    ${price_bolt_tshirt}    ${price_fleece_jacket}
+        Page Should Contain    ${expected_text}
+    END
     Element Text Should Be    ${shopping_cart_badge_xpath}    4
 
 2 Ensure products correct in your cart when add product from detail page
