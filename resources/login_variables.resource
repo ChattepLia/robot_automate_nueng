@@ -1,12 +1,4 @@
 *** Variables ***
-#Users login
-${standard_user}    standard_user
-${problem_user}    problem_user
-${performance_glitch_user}    performance_glitch_user
-${locked_out_user}    locked_out_user
-${password}    secret_sauce
-${invalid_data}    invalid
-
 #Locators for login page
 ${login_user_name_xpath}    id:user-name
 ${login_password_xpath}    id:password

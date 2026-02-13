@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
-Resource   ${CURDIR}/../resources/product_variables.resource  
+Resource   ../resources/product_variables.resource  
 
 *** Keywords ***
 Add backpack to cart from list page

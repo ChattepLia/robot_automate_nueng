@@ -1,12 +1,12 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ${CURDIR}/../resources/global_variables.resource
-Resource    ${CURDIR}/../resources/product_variables.resource
-Resource    ${CURDIR}/../resources/checkout_order_variables.resource
-Resource    ${CURDIR}/../keywords/global_keywords.robot
-Resource    ${CURDIR}/../keywords/product_keywords.robot
-Resource    ${CURDIR}/../keywords/cart_keywords.robot
-Resource    ${CURDIR}/../keywords/checkout_info_keyword.robot
+Resource    ../resources/global_variables.resource
+Resource    ../resources/product_variables.resource
+Resource    ../resources/checkout_order_variables.resource
+Resource    ../keywords/global_keywords.robot
+Resource    ../keywords/product_keywords.robot
+Resource    ../keywords/cart_keywords.robot
+Resource    ../keywords/checkout_info_keyword.robot
 Test Setup    Login With Valid Credentials
 Test Teardown    Close Browser
 

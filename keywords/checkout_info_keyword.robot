@@ -1,12 +1,16 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ${CURDIR}/../resources/global_variables.resource
-Resource   ${CURDIR}/../resources/cart_variables.resource
-Resource   ${CURDIR}/../resources/checkout_info_variables.resource
+Resource   ../resources/global_variables.resource
+Resource   ../resources/cart_variables.resource
+Resource   ../resources/checkout_info_variables.resource
+Resource   ../keywords/product_keywords.robot
+Resource   ../keywords/cart_keywords.robot
 
  
 *** Keywords ***
-Go to checkout info page
+Prepare checkout info page
+    Add 4 Items to Cart
+    Go to Cart Page
     Click Button   ${checkout_button_xpath}
     Wait Until Location Is    ${url_checkout_info}    timeout=5s
 

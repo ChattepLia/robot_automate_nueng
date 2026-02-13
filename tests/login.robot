@@ -1,9 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ${CURDIR}/../resources/global_variables.resource
-Resource   ${CURDIR}/../resources/login_variables.resource
-Resource   ${CURDIR}/../keywords/global_keywords.robot
-Resource   ${CURDIR}/../keywords/login_keywords.robot
+Resource   ../resources/global_variables.resource
+Resource   ../resources/login_variables.resource
+Resource   ../keywords/global_keywords.robot
+Resource   ../keywords/login_keywords.robot
+Suite Setup    Load Login Test Data From Json
 Test Teardown    Close Browser
 
 Documentation    Test cases for login page

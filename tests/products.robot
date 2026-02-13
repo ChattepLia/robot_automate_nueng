@@ -2,11 +2,11 @@
 Library    SeleniumLibrary
 Library    Collections
 Library    String
-Resource   ${CURDIR}/../resources/global_variables.resource
-Resource   ${CURDIR}/../resources/product_variables.resource
-Resource   ${CURDIR}/../keywords/global_keywords.robot
-Resource   ${CURDIR}/../keywords/login_keywords.robot
-Resource   ${CURDIR}/../keywords/product_keywords.robot
+Resource   ../resources/global_variables.resource
+Resource   ../resources/product_variables.resource
+Resource   ../keywords/global_keywords.robot
+Resource   ../keywords/login_keywords.robot
+Resource   ../keywords/product_keywords.robot
 Test Setup    Login With Valid Credentials
 Test Teardown    Close Browser
 

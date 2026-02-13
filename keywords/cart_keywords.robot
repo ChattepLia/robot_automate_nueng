@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ${CURDIR}/../resources/product_variables.resource
-Resource   ${CURDIR}/../resources/cart_variables.resource
-Resource   ${CURDIR}/../keywords/global_keywords.robot
+Resource   ../resources/product_variables.resource
+Resource   ../resources/cart_variables.resource
+Resource   ../keywords/global_keywords.robot
 
 
 *** Keywords ***

@@ -1,8 +1,8 @@
 *** Settings ***
 Library   SeleniumLibrary
-Resource   ${CURDIR}/../resources/global_variables.resource
-Resource   ${CURDIR}/../resources/login_variables.resource
-Resource   ${CURDIR}/../keywords/global_keywords.robot
+Resource   ../resources/global_variables.resource
+Resource   ../resources/login_variables.resource
+Resource   ../keywords/global_keywords.robot
 
 
 *** Keywords ***
